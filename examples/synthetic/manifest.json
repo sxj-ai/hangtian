@@ -1,0 +1,46 @@
+{
+  "schema_version": "0.1",
+  "experiments": [
+    {
+      "experiment_id": "EXP_SYNTH_001",
+      "lineage_group": "GROUP_SYNTH_001",
+      "split": "development",
+      "data_origin": "synthetic",
+      "telemetry_path": "telemetry.csv",
+      "time_column": "Time",
+      "time_kind": "seconds",
+      "channels": {
+        "P_Load1": {
+          "unit": null,
+          "component": "synthetic_test_channel"
+        },
+        "I_Load1": {
+          "unit": null,
+          "component": "synthetic_test_channel"
+        },
+        "U_Load1": {
+          "unit": null,
+          "component": "synthetic_test_channel"
+        },
+        "U_Bus": {
+          "unit": null,
+          "component": "synthetic_test_channel"
+        },
+        "T_Load1": {
+          "unit": null,
+          "component": "synthetic_test_channel"
+        }
+      },
+      "auxiliary_files": [
+        {
+          "path": "context.csv",
+          "time_column": "Time",
+          "fields": [
+            "Load_Signal"
+          ],
+          "role": "context"
+        }
+      ]
+    }
+  ]
+}

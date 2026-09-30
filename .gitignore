@@ -1,0 +1,32 @@
+# Private source data, model weights, generated outputs and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pkl
+*.pickle
+*.parquet
+*.npy
+*.npz
+*.pt
+*.pth
+*.safetensors
+*.csv
+!examples/synthetic/*.csv
+# Owner-authorized dataset snapshot; large files are tracked with Git LFS.
+!XJTU-SPS/**/*.csv
+!XJTU-SPS/**/*.pkl
+data/
+runs/
+artifacts/
+private/
+*.local.json
+*.log
+__pycache__/
+.pytest_cache/
+*.egg-info/
+.venv/
+build/
+dist/
+.DS_Store

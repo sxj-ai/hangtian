@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "package_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "accept",
+        "defer",
+        "reject"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 6000
+    },
+    "fact_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+      },
+      "minItems": 0,
+      "maxItems": 200
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "supporting_fact_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "contradicting_fact_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "missing_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000
+            },
+            "minItems": 0,
+            "maxItems": 200
+          }
+        },
+        "required": [
+          "description",
+          "supporting_fact_ids",
+          "contradicting_fact_ids",
+          "missing_evidence"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 200
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6000
+      },
+      "minItems": 1,
+      "maxItems": 200
+    },
+    "requested_context": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6000
+      },
+      "minItems": 0,
+      "maxItems": 200
+    }
+  },
+  "required": [
+    "package_id",
+    "decision",
+    "summary",
+    "fact_ids",
+    "hypotheses",
+    "limitations",
+    "requested_context"
+  ],
+  "additionalProperties": false
+}

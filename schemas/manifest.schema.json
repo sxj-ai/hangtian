@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "experiments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "experiment_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          },
+          "lineage_group": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          },
+          "split": {
+            "type": "string",
+            "enum": [
+              "development",
+              "train",
+              "validation",
+              "test"
+            ]
+          },
+          "data_origin": {
+            "type": "string",
+            "enum": [
+              "synthetic",
+              "real"
+            ]
+          },
+          "telemetry_path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "time_column": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "time_kind": {
+            "type": "string",
+            "enum": [
+              "seconds",
+              "datetime"
+            ]
+          },
+          "time_format": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "channels": {
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "unit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "component": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                }
+              },
+              "required": [
+                "unit",
+                "component"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "auxiliary_files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                },
+                "time_column": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                },
+                "fields": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 6000
+                  },
+                  "minItems": 1,
+                  "maxItems": 200
+                },
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "context",
+                    "private_label"
+                  ]
+                }
+              },
+              "required": [
+                "path",
+                "time_column",
+                "fields",
+                "role"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          }
+        },
+        "required": [
+          "experiment_id",
+          "lineage_group",
+          "split",
+          "data_origin",
+          "telemetry_path",
+          "time_column",
+          "time_kind",
+          "channels",
+          "auxiliary_files"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 200
+    }
+  },
+  "required": [
+    "schema_version",
+    "experiments"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": "0.1",
+  "experiments": [
+    {
+      "experiment_id": "EXP_001",
+      "lineage_group": "GROUP_001",
+      "split": "development",
+      "data_origin": "real",
+      "telemetry_path": "/absolute/local/path/to/telemetry.csv",
+      "time_column": "Time",
+      "time_kind": "seconds",
+      "channels": {
+        "P_Load1": {
+          "unit": null,
+          "component": "unknown_confirm_from_source_documentation"
+        },
+        "I_Load1": {
+          "unit": null,
+          "component": "unknown_confirm_from_source_documentation"
+        },
+        "U_Load1": {
+          "unit": null,
+          "component": "unknown_confirm_from_source_documentation"
+        },
+        "U_Bus": {
+          "unit": null,
+          "component": "unknown_confirm_from_source_documentation"
+        },
+        "T_Load1": {
+          "unit": null,
+          "component": "unknown_confirm_from_source_documentation"
+        }
+      },
+      "auxiliary_files": []
+    }
+  ]
+}
