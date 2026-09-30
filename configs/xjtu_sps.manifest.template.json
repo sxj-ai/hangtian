@@ -1,0 +1,149 @@
+{
+  "schema_version": "0.1",
+  "experiments": [
+    {
+      "experiment_id": "EXP_001",
+      "lineage_group": "GROUP_001",
+      "split": "development",
+      "data_origin": "real",
+      "telemetry_path": "/replace/with/local/telemetry.csv",
+      "time_column": "Time",
+      "time_kind": "datetime",
+      "channels": {
+        "U_SA": {
+          "unit": null,
+          "component": "SA"
+        },
+        "I_SA": {
+          "unit": null,
+          "component": "SA"
+        },
+        "P_SA": {
+          "unit": null,
+          "component": "SA"
+        },
+        "U_Load_output": {
+          "unit": null,
+          "component": "Load_output"
+        },
+        "I_Load_output": {
+          "unit": null,
+          "component": "Load_output"
+        },
+        "P_Load_output": {
+          "unit": null,
+          "component": "Load_output"
+        },
+        "U_BCR": {
+          "unit": null,
+          "component": "BCR"
+        },
+        "I_BCR": {
+          "unit": null,
+          "component": "BCR"
+        },
+        "P_BCR": {
+          "unit": null,
+          "component": "BCR"
+        },
+        "U_BAT2": {
+          "unit": null,
+          "component": "BAT2"
+        },
+        "I_BAT2": {
+          "unit": null,
+          "component": "BAT2"
+        },
+        "T_BAT2": {
+          "unit": null,
+          "component": "BAT2"
+        },
+        "U_BAT3": {
+          "unit": null,
+          "component": "BAT3"
+        },
+        "I_BAT3": {
+          "unit": null,
+          "component": "BAT3"
+        },
+        "T_BAT3": {
+          "unit": null,
+          "component": "BAT3"
+        },
+        "U_BAT4": {
+          "unit": null,
+          "component": "BAT4"
+        },
+        "I_BAT4": {
+          "unit": null,
+          "component": "BAT4"
+        },
+        "T_BAT4": {
+          "unit": null,
+          "component": "BAT4"
+        },
+        "U_Bus": {
+          "unit": null,
+          "component": "Bus"
+        },
+        "I_Bus": {
+          "unit": null,
+          "component": "Bus"
+        },
+        "P_Bus": {
+          "unit": null,
+          "component": "Bus"
+        },
+        "U_Load1": {
+          "unit": null,
+          "component": "Load1"
+        },
+        "I_Load1": {
+          "unit": null,
+          "component": "Load1"
+        },
+        "T_Load1": {
+          "unit": null,
+          "component": "Load1"
+        },
+        "P_Load1": {
+          "unit": null,
+          "component": "Load1"
+        },
+        "U_Load2": {
+          "unit": null,
+          "component": "Load2"
+        },
+        "I_Load2": {
+          "unit": null,
+          "component": "Load2"
+        },
+        "T_Load2": {
+          "unit": null,
+          "component": "Load2"
+        },
+        "P_Load2": {
+          "unit": null,
+          "component": "Load2"
+        },
+        "U_Load3": {
+          "unit": null,
+          "component": "Load3"
+        },
+        "I_Load3": {
+          "unit": null,
+          "component": "Load3"
+        },
+        "T_Load3": {
+          "unit": null,
+          "component": "Load3"
+        },
+        "P_Load3": {
+          "unit": null,
+          "component": "Load3"
+        }
+      },
+      "auxiliary_files": []
+    }
+  ]
+}

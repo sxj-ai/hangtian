@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "op": {
+          "const": "stat"
+        },
+        "channel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6000
+        },
+        "window": {
+          "type": "object",
+          "properties": {
+            "start_row": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "stop_row": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "start_row",
+            "stop_row"
+          ],
+          "additionalProperties": false
+        },
+        "stat": {
+          "type": "string",
+          "enum": [
+            "mean",
+            "median",
+            "min",
+            "max",
+            "count"
+          ]
+        }
+      },
+      "required": [
+        "op",
+        "channel",
+        "window",
+        "stat"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "op": {
+          "const": "delta"
+        },
+        "channel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6000
+        },
+        "before": {
+          "type": "object",
+          "properties": {
+            "start_row": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "stop_row": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "start_row",
+            "stop_row"
+          ],
+          "additionalProperties": false
+        },
+        "after": {
+          "type": "object",
+          "properties": {
+            "start_row": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "stop_row": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "start_row",
+            "stop_row"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "op",
+        "channel",
+        "before",
+        "after"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "op": {
+          "const": "duplicate_count"
+        },
+        "window": {
+          "type": "object",
+          "properties": {
+            "start_row": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "stop_row": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "start_row",
+            "stop_row"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "op",
+        "window"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "op": {
+          "const": "first_crossing"
+        },
+        "channel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 6000
+        },
+        "window": {
+          "type": "object",
+          "properties": {
+            "start_row": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "stop_row": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "start_row",
+            "stop_row"
+          ],
+          "additionalProperties": false
+        },
+        "threshold": {
+          "type": "number"
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "above",
+            "below"
+          ]
+        }
+      },
+      "required": [
+        "op",
+        "channel",
+        "window",
+        "threshold",
+        "direction"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

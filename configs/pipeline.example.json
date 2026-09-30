@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1",
+  "max_rows": 250000,
+  "max_cases": 6,
+  "max_revisions": 1,
+  "task_language": "English",
+  "max_api_calls": 40,
+  "transport_retries": 1,
+  "timeout_seconds": 120,
+  "max_input_bytes": 160000,
+  "max_response_bytes": 1000000,
+  "models": {
+    "case_curator": {
+      "base_url": "https://api.deepseek.com",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "model": "deepseek-flash",
+      "max_tokens": 8192,
+      "temperature": 0.2
+    },
+    "task_generator": {
+      "base_url": "https://api.deepseek.com",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "model": "deepseek-flash",
+      "max_tokens": 8192,
+      "temperature": 0.2
+    },
+    "task_critic": {
+      "base_url": "https://api.deepseek.com",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "model": "deepseek-flash",
+      "max_tokens": 8192,
+      "temperature": 0.2
+    }
+  },
+  "mining": {
+    "window_rows": 4,
+    "noise_multiplier": 8.0,
+    "group_gap_rows": 2,
+    "max_group_span_rows": 12,
+    "context_rows": 6,
+    "max_channels": 6,
+    "context_channels": [
+      "P_Load1",
+      "I_Load1",
+      "U_Load1",
+      "U_Bus",
+      "T_Load1"
+    ],
+    "zero_channels": [
+      "P_Load1",
+      "I_Load1",
+      "U_Load1",
+      "U_Bus",
+      "T_Load1"
+    ],
+    "zero_epsilon": 0.0,
+    "min_zero_rows": 3,
+    "channels": {
+      "P_Load1": {
+        "min_step": 5.0,
+        "min_spike": 30.0,
+        "neighbor_tolerance": 0.1
+      },
+      "T_Load1": {
+        "min_step": 25.0,
+        "min_spike": 80.0,
+        "neighbor_tolerance": 0.1
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "package_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "local_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "accept",
+              "basic_only",
+              "revise",
+              "reject"
+            ]
+          },
+          "scores": {
+            "type": "object",
+            "properties": {
+              "grounding": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              },
+              "data_dependence": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              },
+              "distinctness": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              },
+              "investigation_value": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 3
+              }
+            },
+            "required": [
+              "grounding",
+              "data_dependence",
+              "distinctness",
+              "investigation_value"
+            ],
+            "additionalProperties": false
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "severity": {
+                  "type": "string",
+                  "enum": [
+                    "blocking",
+                    "warning"
+                  ]
+                },
+                "code": {
+                  "type": "string",
+                  "enum": [
+                    "UNSUPPORTED_CLAIM",
+                    "ANSWER_LEAKAGE",
+                    "DUPLICATE_TASK",
+                    "MISSING_DEFINITION",
+                    "LOW_INVESTIGATION_VALUE",
+                    "UNAVAILABLE_TOOL",
+                    "RUBRIC_MISMATCH",
+                    "QUALITY_CONFOUND",
+                    "OTHER"
+                  ]
+                },
+                "message": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                },
+                "fact_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 200
+                }
+              },
+              "required": [
+                "severity",
+                "code",
+                "message",
+                "fact_ids"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          }
+        },
+        "required": [
+          "local_id",
+          "decision",
+          "scores",
+          "issues",
+          "rationale"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 3
+    }
+  },
+  "required": [
+    "package_id",
+    "reviews"
+  ],
+  "additionalProperties": false
+}

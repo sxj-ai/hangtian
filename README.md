@@ -1,53 +1,79 @@
 # Hangtian — Evidence-Grounded Telemetry Task Factory
 
-从航天遥测中整理可审计的 **Case**，生成有实质差异、可验证的 **Agent Task**。本项目首先建设任务制造流程；轨迹采集、SFT 和独立 Benchmark 是后续阶段。
+从航天遥测中挖掘可审计的 **Case**，制造有实质差异、可验证的 **Agent Task**。先建设数据与任务制造流程，后续再接入真实 Agent 轨迹、SFT 和独立 Benchmark。
 
-> **v0.1 / research scaffold**：本仓库区分已实现代码、合成数据验证和真实数据实验。合成演示不是 XJTU-SPS 实验结果；模型评审通过也不等于任务已通过独立解题验证。本文不是已被实验支持的论文结论。
+> **v0.1：研究原型，不是已经验证的航天诊断系统。** 本版包含实际代码、三个英文角色提示词、JSON 契约、合成演示及测试。尚未接入用户 HPC 的真实 CSV、调用真实 DeepSeek API 或运行 Pi Core 教师。Mock 通过不等于模型通过，Critic 通过不等于任务已经由独立 Agent 验证。
 
 ## 核心流程
 
 ```text
-Local CSV + explicit source/lineage manifest
-  -> deterministic detectors -> bounded event grouping
-  -> recomputable fact packages
+Local telemetry + explicit lineage manifest
+  -> deterministic candidate detectors
+  -> bounded event grouping
+  -> recomputable fact package
   -> LLM Case Curator
   -> LLM Task Generator
-  -> deterministic checks + reference recomputation
+  -> code gates + source-snapshot recomputation
   -> LLM Task Critic -> bounded revision
-  -> candidate task library (pending solver validation)
+  -> provisional task library + private evaluators + audit records
 
-Later: Teacher Agent + Pi Core + read-only tools
-  -> real tool-call trajectories -> independent verification -> SFT / benchmark
+Next: Teacher Agent + Pi Core + read-only tools
+  -> real tool-call trajectories -> independent review -> SFT / benchmark
 ```
 
-候选位置不是案例，案例不是任务，重复执行不是新任务。现有对话中的 4,130 个工况/标签切换位置只是一种历史索引，不是案例上限，也不是本仓库已复算的结果。
+候选位置 ≠ Case，Case ≠ Task，一题多次执行 ≠ 多道题。历史对话中的 4,130 个工况/标签切换位置不等于案例上限，也不是本仓库本次复算的结果。
 
-## 三个模型角色
+## 快速运行
 
-| Role | Responsibility | Must not do |
+Python 3.11+，在仓库根目录：
+
+```bash
+python -m pip install -e ".[dev]"
+python -m pytest -q
+python -m hangtian.cli run \
+  --manifest examples/synthetic/manifest.json \
+  --config configs/pipeline.example.json \
+  --backend mock \
+  --out artifacts/offline-001
+```
+
+离线命令不需要密钥、不调用模型 API。60 行合成 fixture 的输出全部标记 `fixture_only`。在线调用需要配置密钥和两个显式出站开关，见[运行手册](docs/running.md)。非空输出目录不会被覆盖。
+
+## 三个英文 Prompt
+
+| 角色 | 职责 | 核心约束 |
 |---|---|---|
-| Case Curator | 判断材料是否构成可分析场景，绑定事实和证据边界 | 编造事实、单位、因果或故障根因 |
-| Task Generator | 生成少量实质不同的任务及私有验证规格 | 换皮扩写、泄露答案、生成任意可执行代码 |
-| Task Critic | 审核可解性、证据边界、任务差异和分析价值 | 覆盖代码硬错误、把自己的评分当作最终真值 |
+| [Case Curator](prompts/case_curator.md) | 判断材料是否构成有价值的分析场景 | 事实引用、候选不当真值、accept/defer/reject |
+| [Task Generator](prompts/task_generator.md) | 提出 0–3 个实质不同的任务和私有评分规格 | 不凑题数、不泄露答案、不生成可执行代码 |
+| [Task Critic](prompts/task_critic.md) | 审查可解性、证据边界、重复和分析价值 | 独立上下文、不能覆盖硬错误、不给虚假的质量保证 |
 
-三个角色使用独立上下文，初始均配置 DeepSeek V4.1 Flash；角色、供应商和模型参数可以独立替换。官方当前调用别名是 **`deepseek-flash`**，并非 `deepseek-v4.1-flash`。别名可能变化，因此实验需记录返回模型、时间、配置和可用的后端标识。见 [官方发布说明](https://www.deepseek.com/en/news/deepseek-v4-1-flash/) 与 [API 文档](https://api-docs.deepseek.com/api/create-chat-completion/)（核对日期：2026-09-30）。
+初版三个角色均配置 **DeepSeek V4.1 Flash**。官方当前 API 别名是 **`deepseek-flash`**，不是 `deepseek-v4.1-flash`。各角色可独立替换配置；非兼容 API 需替换 `RoleModel` 适配器。别名并非不可变权重版本，须记录返回模型、时间及请求元数据。[官方依据与核对范围](docs/sources.md)。
 
-## 阅读顺序
+## 已实现与边界
 
-1. [概念与研究边界](docs/concepts.md)
-2. [Method 设计](docs/method.md)
-3. [Case Mining 与数据接入](docs/data_and_mining.md)
-4. [Task Factory 与英文提示词协议](docs/task_factory.md)
-5. [验证、审计和防泄漏](docs/verification.md)
-6. [实验设计与实现路线](docs/experiments.md)
-7. [运行手册](docs/running.md)
+| 模块 | 已实现 | 仍需完成 |
+|---|---|---|
+| 数据 | 显式 manifest、原序读取、辅助表对齐、来源哈希和 split 检查 | 真实数据通道/单位确认、衍生近重复追溯 |
+| 候选挖掘 | 工况切换、中位数突变、孤立尖峰、选定通道全零、时间质量 | 漂移、多周期、跨源参考、稳定对照 |
+| 事实包 | 可复算查询、统计、背景和限制 | 真实阈值校准、领域解释审计 |
+| 三阶段制造 | 角色接口、JSON Schema、硬门槛、Critic、有限修订 | 真实 API 集成 smoke test、任务质量评测 |
+| 工具后端 | 有范围限制的只读 Python 工具、Observation 收据 | Pi Core 注册、真实模型多轮执行 |
+| 导出 | solver 视图与私有答案分离、失败和修订记录 | 独立解题验证、完整训练/Benchmark 发布 |
 
-## 数据放在哪里？
+当前数值复算共享同一计算实现，不冒充完全独立的双实现核验。结构检查和 Critic 均不能消除全部语义泄漏，正式数据需人工及跨模型抽查。
 
-真实 CSV **不需要上传 GitHub**。数据保留在 HPC 或本地，通过显式 manifest 引用。仓库只保存代码、提示词、协议和标明为合成的示例。`.gitignore` 排除原始数据、私有答案、运行日志、密钥和模型权重。
+## 文档导航
 
-代码框架和三阶段闭环可以先写、先用合成数据测试；实际检测阈值、辅助表对齐、通道单位、同源关系和任务价值，必须再用真实 CSV 及说明文件校准。目录检查或历史聊天摘要不能替代本次实际验证。
+- [概念与范围](docs/concepts.md)：固定 Case / Task / Trajectory 层级。
+- [详细 Method](docs/method.md)：问题定义、算法、信息隔离、三阶段协议和研究假设。
+- [数据与 Case Mining](docs/data_and_mining.md)：真实 CSV 如何接入、检测器与校准要求。
+- [Task Factory](docs/task_factory.md)：三个 Prompt 的输入输出、编译与模型替换。
+- [验证与审计](docs/verification.md)：硬检查、语义评审、权限和剩余缺口。
+- [实验设计](docs/experiments.md)：基线、消融、独立质量审计、来源划分及指标。
+- [运行手册](docs/running.md)、[本次验证记录](docs/validation.md)、[资料来源](docs/sources.md)。
 
-## 状态与承诺
+## 是否要把 CSV 上传到 GitHub？
 
-本次初始化将补齐可运行的离线演示、受限计算器、模型适配器、测试和详细文档。正式数据量、任务合格率、模型表现及论文创新性均不预先宣称。使用外部模型前须配置自己的 API key 并明确允许网络调用和数据出站；离线测试不调用付费 API。
+**不需要。** 原始数据可以一直留在 HPC，通过本地 manifest 读取。先写通用代码和提示词，再访问真实数据校准字段、单位、时间、阈值和场景价值。仓库只提交明确标注的合成 CSV；真实数据、标签、私有答案、日志、密钥和权重由 `.gitignore` 排除。
+
+本仓库的方法和 taxonomy 是研究设计，不预先宣称论文创新、实验提升或足够的数据规模。完整相关工作对照和真实实验仍待开展。
