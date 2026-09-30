@@ -1,0 +1,1863 @@
+{
+  "schema_version": "dataset-manifest/1",
+  "dataset": "XJTU-SPS",
+  "created_utc": "2026-09-30T09:17:05.730716+00:00",
+  "hash_algorithm": "sha256",
+  "summary": {
+    "files": 364,
+    "total_bytes": 5420627249,
+    "unique_sha256": 327,
+    "extensions": {
+      "(none)": {
+        "files": 1,
+        "bytes": 2568
+      },
+      ".zip": {
+        "files": 1,
+        "bytes": 6958
+      },
+      ".md": {
+        "files": 3,
+        "bytes": 5549
+      },
+      ".csv": {
+        "files": 120,
+        "bytes": 1285730665
+      },
+      ".pdf": {
+        "files": 96,
+        "bytes": 2409807457
+      },
+      ".pkl": {
+        "files": 120,
+        "bytes": 1725072567
+      },
+      ".txt": {
+        "files": 23,
+        "bytes": 1485
+      }
+    }
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 2568,
+      "sha256": "7fe88fbb1c9ca2b10485f3af1760677b66e9a925a48a8b3b5afe30960742ff4b"
+    },
+    {
+      "path": "Data_generate_code_20260309.zip",
+      "bytes": 6958,
+      "sha256": "82dcf8bfa701d1d4c2904fcc4f0634bca0312a47cc50883099c693a86753424b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2720,
+      "sha256": "910edb1b50f6c72deda3ea616636c30b5bb5b31a74d78286b1921ef65fa93a2f"
+    },
+    {
+      "path": "XJTU-SPS for AD/XJTU-SPS for AD_Test.csv",
+      "bytes": 102384995,
+      "sha256": "e945128b03f0d2b76518aece59e8a17abef545fa0cccf47eb6e61447469b5467"
+    },
+    {
+      "path": "XJTU-SPS for AD/XJTU-SPS for AD_Test.pdf",
+      "bytes": 16681467,
+      "sha256": "a00b6784fa3d12a07b773aa96cf06ad5079029b1f4acd322f29ed4db25544a4d"
+    },
+    {
+      "path": "XJTU-SPS for AD/XJTU-SPS for AD_Test.pkl",
+      "bytes": 150460732,
+      "sha256": "8dc10dcfd39b1337581f55eb3f531d629712e09ae728940096e39b8eb3d39c89"
+    },
+    {
+      "path": "XJTU-SPS for AD/XJTU-SPS for AD_Test_AnomalyLabel.csv",
+      "bytes": 11773673,
+      "sha256": "c328f633fbff5635a1c942af3cfc3c7ab1cca892866f390933ad053906ade390"
+    },
+    {
+      "path": "XJTU-SPS for AD/XJTU-SPS for AD_Test_AnomalyLabel.pkl",
+      "bytes": 19414507,
+      "sha256": "dba7f44eee372f6c9591c60f6ebf4125980f68521d32766d59a4e92a11d7db20"
+    },
+    {
+      "path": "XJTU-SPS for AD/XJTU-SPS for AD_Train.csv",
+      "bytes": 38758933,
+      "sha256": "d970cd074cfc465803aab52271203166dd9533639d9c2006a3ce15696b151433"
+    },
+    {
+      "path": "XJTU-SPS for AD/XJTU-SPS for AD_Train.pdf",
+      "bytes": 1010315,
+      "sha256": "552de56ac8f6ff4c3dc8d67971c2be0dd71d01e9fa79c1242b5d8cfbc36cfad7"
+    },
+    {
+      "path": "XJTU-SPS for AD/XJTU-SPS for AD_Train.pkl",
+      "bytes": 51514264,
+      "sha256": "2210d5441ccc5e059a7864d25bade549eb5ec0a8900f8b425774d665bce70d68"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_18cycles.csv",
+      "bytes": 20484170,
+      "sha256": "403c173705b379842bdbde1f290c2bbe578a830a20ebaf4edb869b98232d3588"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_18cycles.pdf",
+      "bytes": 926972,
+      "sha256": "0a0a498de08ca790dd84277fc885a6ac65c4c101cb68adf87814a32128517957"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_18cycles.pkl",
+      "bytes": 27273080,
+      "sha256": "084b305254ae81d81b839bc5ec095a360d7b8705e81f1fd8d110895a489824d2"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_24cycles.csv",
+      "bytes": 27378607,
+      "sha256": "ecb4168a16ca219c73e8add36197e80f1599f824987798a409fe74e21039918b"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_24cycles.pdf",
+      "bytes": 960899,
+      "sha256": "aec29f25b2c7e8764f910ab2d1106a7c1c58230fb4d01a7e284a45650f997179"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_24cycles.pkl",
+      "bytes": 36361688,
+      "sha256": "2cedc93e64178bc6a2f41f52e9dc76f9a600c7e73d3b727e8be98f797a39f528"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_34cycles.csv",
+      "bytes": 38758933,
+      "sha256": "d970cd074cfc465803aab52271203166dd9533639d9c2006a3ce15696b151433"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_34cycles.pdf",
+      "bytes": 1010315,
+      "sha256": "552de56ac8f6ff4c3dc8d67971c2be0dd71d01e9fa79c1242b5d8cfbc36cfad7"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_34cycles.pkl",
+      "bytes": 51514264,
+      "sha256": "2210d5441ccc5e059a7864d25bade549eb5ec0a8900f8b425774d665bce70d68"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_4cycles.csv",
+      "bytes": 4565756,
+      "sha256": "af66485ea401645a24b1423d0ef645845724f38c1e0cf07e47349e47284552f0"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_4cycles.pdf",
+      "bytes": 622737,
+      "sha256": "2b4997587877f145b737d26e7e3ee9271ea3d09b41f1e35cbb5cac4601c4bd81"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_4cycles.pkl",
+      "bytes": 6061698,
+      "sha256": "5113736fab93cf747848c48dcb6afd62e3ee5b5597a6e771cc80684cc3567c9f"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_90cycles.csv",
+      "bytes": 101514741,
+      "sha256": "41e9409cd2bfea6acea0b5a9b562d6d7ff250a4cb5af8f5e425c02875fb8cdb4"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_90cycles.pdf",
+      "bytes": 1217990,
+      "sha256": "0ae34dbcad777eb1c36b900804af59267e766265d34053d74f54b11059772930"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_90cycles.pkl",
+      "bytes": 136356232,
+      "sha256": "765592f19fd6be1d0b571481921270882a12b11d8bdc605b030162b0de91a886"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_94cycles.csv",
+      "bytes": 105854391,
+      "sha256": "066678c5893c0250778ff6bf3c080c255203f0d4d32fd1fc6c9cb6e58bc0fe54"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_94cycles.pdf",
+      "bytes": 1237902,
+      "sha256": "62205e6d0d3e4f7e06265f7d46a8a1fdfb6d31b907b234fc469cd4bf358ecdec"
+    },
+    {
+      "path": "XJTU-SPS for F or R/XJTU-SPS for F or R_94cycles.pkl",
+      "bytes": 142415304,
+      "sha256": "3c5f1537723c9ec7242599020f70df8609a897f419090cd3855441562777dd5e"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_degradation/BAT_degradation_Test.csv",
+      "bytes": 1079474,
+      "sha256": "58b7f69cf5508ba4c6b479eb6f205baf68e4e9f12295728c486435b88cc95c70"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_degradation/BAT_degradation_Test.pdf",
+      "bytes": 409744,
+      "sha256": "d6af36bdcb922a182a0e34fbc4648db319fcf19f6e1ecf884e11e51d2a95f8ac"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_degradation/BAT_degradation_Test.pkl",
+      "bytes": 1487872,
+      "sha256": "cbf01560c870712163198a383ef9caad2258b03a48701630d14c402ff2696570"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_degradation/BAT_degradation_Train.csv",
+      "bytes": 2320810,
+      "sha256": "98d8a6db1e1164db9e941fb0af6b8c6aeff03d9702f55b1a0a95992d958e67ef"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_degradation/BAT_degradation_Train.pdf",
+      "bytes": 520990,
+      "sha256": "68bd82afc29592bb7a562a8a6b3d848552c37e20562e00d5062a95bef9090c7e"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_degradation/BAT_degradation_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "806a912900542f8c922ce622c34c31df13b93ee175ab9feb787b26a1a7fc99c0"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_open circuit/BAT_open circuit_Test.csv",
+      "bytes": 1077183,
+      "sha256": "085a86697b17e70938fa4068705291064536755fe41e6decf557819f947a0a66"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_open circuit/BAT_open circuit_Test.pdf",
+      "bytes": 419294,
+      "sha256": "0e9044199f48c55ce4d1472ed483bb563b4a1fbeade9e46f634deec7ba8700cb"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_open circuit/BAT_open circuit_Test.pkl",
+      "bytes": 1486752,
+      "sha256": "83fb5b3822fc387855cdfc444fe3242ac905591daea8c701724f9b3b44c340ac"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_open circuit/BAT_open circuit_Train.csv",
+      "bytes": 2316542,
+      "sha256": "43f56c19cee583fdbe0a47f06582df9581b16e15de852e8c7dd8394c00d1ca53"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_open circuit/BAT_open circuit_Train.pdf",
+      "bytes": 556788,
+      "sha256": "878cf490f2436a9128bb09a6f6f2aea19a78a70b78cdd20fd91b8982271fb33b"
+    },
+    {
+      "path": "XJTU-SPS for FD/BAT_open circuit/BAT_open circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "6dcc55907bcf71f0df495340639c0b5dc907b21a6d6a1ff3d454cb574b8f7e35"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_increased power loss/BCR_increased power loss_Test.csv",
+      "bytes": 1078876,
+      "sha256": "8a4f1e97ce5e83144a2501213a3a6c601329fdc19a2515fe3fb4a2789233f5c5"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_increased power loss/BCR_increased power loss_Test.pdf",
+      "bytes": 351841,
+      "sha256": "6c7e7b3840eb666c9151c5dfa3b2bf2248bcf5179a5cf5cecf79bc2ef6486603"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_increased power loss/BCR_increased power loss_Test.pkl",
+      "bytes": 1488992,
+      "sha256": "cbf0b4bf337116dbef8780183f180c0e56971f53ba79989cb00a49f61967300d"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_increased power loss/BCR_increased power loss_Train.csv",
+      "bytes": 2318322,
+      "sha256": "9e85615e59f7d317fff0b5c7215c8b824094cd3b33b93d6c66a221af1084ece7"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_increased power loss/BCR_increased power loss_Train.pdf",
+      "bytes": 435466,
+      "sha256": "3f2fc9723e811c52a7c3239d19537eacc109a0fff0917c65d3748eb8aa9ac9db"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_increased power loss/BCR_increased power loss_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "67e12a7771ec04cea0c3f47a786b438e29ac5d60b60fa2305e97e742318287b0"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_open circuit/BCR_open circuit_Test.csv",
+      "bytes": 1030089,
+      "sha256": "06ab4e1b64c4d47a70ad3e4763e8f1f1b5b90ec36ff365e4d3896db428b65884"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_open circuit/BCR_open circuit_Test.pdf",
+      "bytes": 366145,
+      "sha256": "5b21c4592e70cead9a69cd49751c92e1189cc42ee4bc03821cb8408607e715bf"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_open circuit/BCR_open circuit_Test.pkl",
+      "bytes": 1490112,
+      "sha256": "f113f9867e708c94ab584ea22c0fb2fd82e84ecc3011817b9f084c241463094d"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_open circuit/BCR_open circuit_Train.csv",
+      "bytes": 2251449,
+      "sha256": "ca5c80dce95c1aa0a37f40ee10d4402917152f2ede87cb2a7e811df4713be07c"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_open circuit/BCR_open circuit_Train.pdf",
+      "bytes": 413310,
+      "sha256": "f3ea2c72de737babba0c5a31be11b84804c4db3489825a1a1c255eba6d157219"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_open circuit/BCR_open circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "b52af16107fa889347b3c9f41c6b554f9cd7f72114ac7b399e75365f1efcad55"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_short circuit/BCR_short circuit_Test.csv",
+      "bytes": 719817,
+      "sha256": "23f8928d3d6a4a6638c7407067e8f727f4b945ae842b1ccf830a1ace232e20a6"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_short circuit/BCR_short circuit_Test.pdf",
+      "bytes": 172057,
+      "sha256": "2921bff29ef57be8ac4f06e20f5967f2163ebcc3cae83f617eb247ba373e54f7"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_short circuit/BCR_short circuit_Test.pkl",
+      "bytes": 1318192,
+      "sha256": "296171d79854b5860cb87d1bbc872e6d672f33aa9d33a38429f392cf03490dbf"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_short circuit/BCR_short circuit_Train.csv",
+      "bytes": 1941358,
+      "sha256": "3966d8a660d6831d8f03d63c2833fea310bb547fde80761822151f78f34a8f49"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_short circuit/BCR_short circuit_Train.pdf",
+      "bytes": 224259,
+      "sha256": "861befd7af7d0913abf0f36b61c36f37d55b98b50e074deb13863d0fb91b4ea5"
+    },
+    {
+      "path": "XJTU-SPS for FD/BCR_short circuit/BCR_short circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "cde4b631174d80f76d5f9b0c52198de0ab03db099c315beb6c1bef5e83ca4189"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_insulation breakdown/Bus_insulation breakdown_Test.csv",
+      "bytes": 1019378,
+      "sha256": "570e150de97e82a45f64bd8e0f66be1ea0d805380cbcb51f275f5cf79575c9f8"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_insulation breakdown/Bus_insulation breakdown_Test.pdf",
+      "bytes": 361547,
+      "sha256": "ee8ccdb9133d553677ee6bd09c2aa0dfeabba113db8ea1f8ff4454351267e956"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_insulation breakdown/Bus_insulation breakdown_Test.pkl",
+      "bytes": 1491792,
+      "sha256": "65a5a7a15229d5fbdf509b4ab0707f184cfc8cdf4d504bede66ceec3d0952cd1"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_insulation breakdown/Bus_insulation breakdown_Train.csv",
+      "bytes": 2204409,
+      "sha256": "77de185408435c4c115143a84c3980661793606eabd065a861eb98962034a1b5"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_insulation breakdown/Bus_insulation breakdown_Train.pdf",
+      "bytes": 501174,
+      "sha256": "6654efae2ece21eaaf3f8a5e76049c46603603c4d6c59f26e0cdef714ff83a41"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_insulation breakdown/Bus_insulation breakdown_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "93c53a39941b673df0894963516eada3fcadb8e06e301e695241d2489b3d07d7"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_open circuit/Bus_open circuit_Test.csv",
+      "bytes": 967733,
+      "sha256": "110b9ad803401924c87be776f74701f5556d650f96a344574956cd00cd85c516"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_open circuit/Bus_open circuit_Test.pdf",
+      "bytes": 340515,
+      "sha256": "d0ced4fab1615ea72eb9f1b67042de1e4be4af4f8c645cb89daab3e3c8461fcd"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_open circuit/Bus_open circuit_Test.pkl",
+      "bytes": 1492352,
+      "sha256": "ce998244939eaebe5ee024f3ee03aea731804cc96d82398f2117014777d31656"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_open circuit/Bus_open circuit_Train.csv",
+      "bytes": 2075650,
+      "sha256": "bdaf06cc3d7406b77be448e78d6bf9a4b68d9e2462c9f2342b17be8cad31bde3"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_open circuit/Bus_open circuit_Train.pdf",
+      "bytes": 392306,
+      "sha256": "b78ed4c3dd9fadbd17c7b29ce84bbcccca9012dae7529edca1c7455e0d9d5d00"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_open circuit/Bus_open circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "f5bc3ff3a08e3c734d294497cf1689475546e05ac841272013d8ea11abce0144"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_short circuit/Bus_short circuit_Test.csv",
+      "bytes": 970051,
+      "sha256": "9ed82f606a5d72e57af3dedf58c77cd0e431c6fe10ba82eb1ff23682c39eaaa2"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_short circuit/Bus_short circuit_Test.pdf",
+      "bytes": 372391,
+      "sha256": "d4e4fb497a63f594afd096cf03827a949683a461876163c555fba19dd546de1d"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_short circuit/Bus_short circuit_Test.pkl",
+      "bytes": 1493192,
+      "sha256": "bbd842f63826ffd1a4762da62e098d0f184e3353c3c3ffec8adfd02630de9441"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_short circuit/Bus_short circuit_Train.csv",
+      "bytes": 2077989,
+      "sha256": "ba7ec94362344cad25b9ed5f95f852d435ccd507cbb658a9fa2b0e6460e784b0"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_short circuit/Bus_short circuit_Train.pdf",
+      "bytes": 472381,
+      "sha256": "3187d52bd393340315c312aca4d6f3af1464755fcaad785dcc94ec570ea505b3"
+    },
+    {
+      "path": "XJTU-SPS for FD/Bus_short circuit/Bus_short circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "e8f50452a4413505703e3c99d34f885d44d442aec60871634b4f249b58fcd6b6"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load1_open circuit/Load1_open circuit_Test.csv",
+      "bytes": 1068958,
+      "sha256": "293b630450920f1d231d0d80cdc2d5e0ef8498ed477ec349c97504bc4735576f"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load1_open circuit/Load1_open circuit_Test.pdf",
+      "bytes": 457848,
+      "sha256": "06baa0a85c370666ea5f0fc5884e2ff4b2bf89dead9c0e773d679e01bc2309f1"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load1_open circuit/Load1_open circuit_Test.pkl",
+      "bytes": 1488152,
+      "sha256": "4f640609d039d6c5bce5a97a117e5cb7973f3ae3f88425c205f5a0ce4cdc9cd7"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load1_open circuit/Load1_open circuit_Train.csv",
+      "bytes": 2296343,
+      "sha256": "3e7135c85e4d5d2d32ed5ab94bb738ac572d5f8ebd85283404dc0f3ce9b2193b"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load1_open circuit/Load1_open circuit_Train.pdf",
+      "bytes": 606023,
+      "sha256": "f30b63fe0a9a9b56b4fd448d46e2bfbd15b2c76800c0103ea9326745d03d0b12"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load1_open circuit/Load1_open circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "34b9e959e8434f23b1d5203836619fd2012c34413f1c337ae2f86ec43a29a0a9"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load2_open circuit/Load2_open circuit_Test.csv",
+      "bytes": 1068831,
+      "sha256": "ad3b18b1abe4fc5dac6a5ec952c052a9fdb85371ea697f424feba9905cb7057a"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load2_open circuit/Load2_open circuit_Test.pdf",
+      "bytes": 414890,
+      "sha256": "3c522d03e034f11458dafcc7be81f10c97f785ba0e17797234c6d34de3ad7a0e"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load2_open circuit/Load2_open circuit_Test.pkl",
+      "bytes": 1488152,
+      "sha256": "c6e7f6cce193315b3d9851eb48cd11dcc5a0c36d97e77338b62f59c4a8fde659"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load2_open circuit/Load2_open circuit_Train.csv",
+      "bytes": 2302348,
+      "sha256": "9384b47af682460e2517bbb227db058b9bb52fb2ce18526c6d4242791ee1ca25"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load2_open circuit/Load2_open circuit_Train.pdf",
+      "bytes": 548659,
+      "sha256": "b8f398ee802f2d06133c7faed26fb0c48e7a6cfee7e2cb413884f5a7175a371b"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load2_open circuit/Load2_open circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "dea829e18d26f6b851c022e58bf98f9ac56d51a25e8e7f2ead84ae708e0a79c1"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load3_open circuit/Load3_open circuit_Test.csv",
+      "bytes": 1070490,
+      "sha256": "d9e1909bac6acbcf327d15fc6fc0fc37136daa41dc0a9b0ee96a1983b748bf85"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load3_open circuit/Load3_open circuit_Test.pdf",
+      "bytes": 462904,
+      "sha256": "8fbed682f5dd3003e1ba038027f4a564dc885753bbef85668dc6423cccd64c05"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load3_open circuit/Load3_open circuit_Test.pkl",
+      "bytes": 1488152,
+      "sha256": "d585d53a6973a559c95ec4ed847a40649469f15593df078e9fe1f7ef5c9c56f0"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load3_open circuit/Load3_open circuit_Train.csv",
+      "bytes": 2303592,
+      "sha256": "bb979c9396452ff3f6acef23650a21c5f3f6cf1cab6b5d365cd8c18d6e3a8a82"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load3_open circuit/Load3_open circuit_Train.pdf",
+      "bytes": 610099,
+      "sha256": "c734453c32a9d1abaec54782124eaf43c1fd9f2a7a866367f0f33ad2febf4d30"
+    },
+    {
+      "path": "XJTU-SPS for FD/Load3_open circuit/Load3_open circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "e244ed370d30d87f8f970e82938c953a99338da428ef1531d22051b95f5e02fa"
+    },
+    {
+      "path": "XJTU-SPS for FD/Normal/Normal_Test.csv",
+      "bytes": 2230413,
+      "sha256": "1397afa934a574095d8b8b9643e70a2403cfdbaa0c94f47d95acec7d6c8f1d27"
+    },
+    {
+      "path": "XJTU-SPS for FD/Normal/Normal_Test.pdf",
+      "bytes": 506909,
+      "sha256": "b9cad4a0e1134034f5c5fa4782df1f3946502ce7be756a9b040b194fa5cfddfa"
+    },
+    {
+      "path": "XJTU-SPS for FD/Normal/Normal_Test.pkl",
+      "bytes": 2960922,
+      "sha256": "05ac24168792fffd51798c431117e45375b4f31f3ef1fd78e68ed4ab94a01067"
+    },
+    {
+      "path": "XJTU-SPS for FD/Normal/Normal_Train.csv",
+      "bytes": 2335601,
+      "sha256": "056d2dba4168313f0e3c562f0dc17d94b27dcba5d9a2b2ad9292c2bf803ce896"
+    },
+    {
+      "path": "XJTU-SPS for FD/Normal/Normal_Train.pdf",
+      "bytes": 512988,
+      "sha256": "86c2773cdf8c129470150aebddbd3a248a109da3fd1548d7c85c5297a8105421"
+    },
+    {
+      "path": "XJTU-SPS for FD/Normal/Normal_Train.pkl",
+      "bytes": 3102089,
+      "sha256": "88eed96c26f2d34cefc72879906816ea6bba795607a6401043102525c21d3304"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_Test.csv",
+      "bytes": 1048346,
+      "sha256": "19fe2ad69b71263781c9f27f41eceed3ed12b8eba1947164641b2452ce210b28"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_Test.pdf",
+      "bytes": 431789,
+      "sha256": "91b3579a04a66a0ae00f351c9cfd7359fb51c7a17a5fe7ba32c1cc543177b232"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_Test.pkl",
+      "bytes": 1490672,
+      "sha256": "24b607807d0b375980acddfddce4ac2fc5d68ae6334a9ae3461767f8608cb8ef"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_Train.csv",
+      "bytes": 2248025,
+      "sha256": "ab713bfdd18209450806f84dc414ff3d9f86bda0f64fd28af0a2ab6488d47ea6"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_Train.pdf",
+      "bytes": 541432,
+      "sha256": "ffe3f0c5837b81aff90dfcf6ee117ddb0b1a89ece52ac351f09f936cf6387e22"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "f64714ad19bf4c089e2eb2a116b05fb6c167d9e9a2930c79ecc94bc0f9902b30"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_Test.csv",
+      "bytes": 1056420,
+      "sha256": "eda639d93cef7e567119b54f8fa7b06e5114210c631efcdbbffa41551a6d5b65"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_Test.pdf",
+      "bytes": 395853,
+      "sha256": "aa76f01ed97d3db968f28ba041b1005a26c0fd0de50c8aefb4168eb296654754"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_Test.pkl",
+      "bytes": 1489272,
+      "sha256": "8a3145aeb5b29eaf9d7b3833f09542b9b1ce3244433aee074194557a2b59007d"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_Train.csv",
+      "bytes": 2268413,
+      "sha256": "cb740c2f05f58307973f1c143945c696e518a0c5c4049612eefde76a0cdfa9bb"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_Train.pdf",
+      "bytes": 491088,
+      "sha256": "67b4ac7c545a342198f2ee59674e0643d2bcae2980c3a0f3656498b00918700f"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "d7795788ac1ed1d66541cf2f06a47fd6b816b5267d4320d4384f8ebcd7496491"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_Test.csv",
+      "bytes": 1049688,
+      "sha256": "77e4f22deb8a10fcf1c1ebcb43e66c194aba036f7cc425381ac3b67778a75984"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_Test.pdf",
+      "bytes": 398675,
+      "sha256": "84b65caf7aac0c317ba920f9f77df0ea97e1581f316221306e9e89f08598e5b9"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_Test.pkl",
+      "bytes": 1489832,
+      "sha256": "7d43a7cd7e375929aed0adce73690ecc31b766a0a6ea98dd6c620f3d35e2fc64"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_Train.csv",
+      "bytes": 2256091,
+      "sha256": "641003b3647973c2c6f7fad676d057c1237cdda43d8ee6b94f98d4443af31fa9"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_Train.pdf",
+      "bytes": 514028,
+      "sha256": "4f22cd79f2c675d9a03aca10de78c88739e7f97cf94b2e4bf0ccc26ce7124e6a"
+    },
+    {
+      "path": "XJTU-SPS for FD/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "c9162c58fd8a97a13b3951ebb041dea6b22c0af7466e53dc0d1ae4b767b9ac83"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_component deterioration/SA_component deterioration_Test.csv",
+      "bytes": 1079002,
+      "sha256": "a15f01c3bfdb66b92eb3130f35c0e1ca8093bd3aa383b281b33a3792ac4a72aa"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_component deterioration/SA_component deterioration_Test.pdf",
+      "bytes": 420388,
+      "sha256": "02215880a3f9cd574c055cb6d63b3647b77e1e3046eb32ac5d36106738eb81eb"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_component deterioration/SA_component deterioration_Test.pkl",
+      "bytes": 1488432,
+      "sha256": "2f82abd170d1fab0129b829f567cac6258bae66ac50b9e55fce79956d1b38594"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_component deterioration/SA_component deterioration_Train.csv",
+      "bytes": 2320017,
+      "sha256": "30ac133c78c2b77a25e50afc8a5f7dd60d289714ade61f661aa7835407186d87"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_component deterioration/SA_component deterioration_Train.pdf",
+      "bytes": 536873,
+      "sha256": "45f693164b9ecb71b8a0e221d7440a602740d77704601679f7e9e2d6ce745ebe"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_component deterioration/SA_component deterioration_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "8971be5fc60e5af87456fd4355410d1a1e427222610c75a13f2b4e3950ea5914"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch open circuit/SA_partial component or branch open circuit_Test.csv",
+      "bytes": 1082142,
+      "sha256": "540cca079950b6c998a512cff222f2fb264e2a2fe8e8748769f4a30d7c26e6ae"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch open circuit/SA_partial component or branch open circuit_Test.pdf",
+      "bytes": 422792,
+      "sha256": "64fad0f4edaa8fd1dd2d605b6fbca33d11eb521eacc44510e1df4f1352d0ea37"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch open circuit/SA_partial component or branch open circuit_Test.pkl",
+      "bytes": 1488432,
+      "sha256": "4fa284a8e3804ba480fda1684422e077430f9424148f04dce2b78bdbf15f5278"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch open circuit/SA_partial component or branch open circuit_Train.csv",
+      "bytes": 2325439,
+      "sha256": "6695e8e849763c95207348c1eeb710a12018737d828e476557ef5f7ed032b0aa"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch open circuit/SA_partial component or branch open circuit_Train.pdf",
+      "bytes": 542516,
+      "sha256": "96275137767cb0248d20da9205ed19630c935c6e23f9f51b01977cbe8d85a666"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch open circuit/SA_partial component or branch open circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "1af580b90ae8c37dd87e337e34c1403edd09d6ac03a0ee879cedecbb816004cb"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch short circuit/SA_partial component or branch short circuit_Test.csv",
+      "bytes": 1078160,
+      "sha256": "b5069465d03428b056cd82df04b069b82097bb2dda9ec57a5be3e00353bc6d0d"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch short circuit/SA_partial component or branch short circuit_Test.pdf",
+      "bytes": 397540,
+      "sha256": "69ed680918f09c31151cff8720933a8a15c0bd956c67284657f4588f66332197"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch short circuit/SA_partial component or branch short circuit_Test.pkl",
+      "bytes": 1488432,
+      "sha256": "cd0decf5addc5d898d7579244903b0fb108eaebf8c853b512916bb5ed9df4241"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch short circuit/SA_partial component or branch short circuit_Train.csv",
+      "bytes": 2319098,
+      "sha256": "1e22987e59d852002ae73885bd3fe86a05f97545de0c77434b4e38e35f498cc2"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch short circuit/SA_partial component or branch short circuit_Train.pdf",
+      "bytes": 542691,
+      "sha256": "9bba775f595fb4992e0bed5dd800426780e7aa252ac156208aea019e3b43b4be"
+    },
+    {
+      "path": "XJTU-SPS for FD/SA_partial component or branch short circuit/SA_partial component or branch short circuit_Train.pkl",
+      "bytes": 3193370,
+      "sha256": "dc586def21668ca12901441546b18b520e90036be1693390dd9be19345afc0c4"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_18cycles.csv",
+      "bytes": 20484170,
+      "sha256": "403c173705b379842bdbde1f290c2bbe578a830a20ebaf4edb869b98232d3588"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_18cycles.pdf",
+      "bytes": 169727282,
+      "sha256": "7af63a026cf885366fce494f131f0b0c724a7d0f6c54ee83c675390c0e0a55e7"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_18cycles.pkl",
+      "bytes": 27273080,
+      "sha256": "084b305254ae81d81b839bc5ec095a360d7b8705e81f1fd8d110895a489824d2"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_18cycles_ModeLabel.csv",
+      "bytes": 2306088,
+      "sha256": "bd7c95db931e02c56d88fb50a852d86acceb721fc1efe90640e366bc891f3e5f"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_18cycles_ModeLabel.pkl",
+      "bytes": 2407354,
+      "sha256": "c31dff12594deb48437d9903ea2eb17eb98ce593c669a94751eb2e5c0f04a6a2"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_24cycles.csv",
+      "bytes": 27378607,
+      "sha256": "ecb4168a16ca219c73e8add36197e80f1599f824987798a409fe74e21039918b"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_24cycles.pdf",
+      "bytes": 208155847,
+      "sha256": "8255b925a639bf0cd077551515055ce8de2e76ed99ca12e38a5e4e6f8e3b8e22"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_24cycles.pkl",
+      "bytes": 36361688,
+      "sha256": "2cedc93e64178bc6a2f41f52e9dc76f9a600c7e73d3b727e8be98f797a39f528"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_24cycles_ModeLabel.csv",
+      "bytes": 3074610,
+      "sha256": "ddcd2dbe5f31f0fd95e08ca4f504c74a5b27f8924f1d12fefbdcc1865c226a51"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_24cycles_ModeLabel.pkl",
+      "bytes": 3209290,
+      "sha256": "31c1385745f49074cf467ea9875d0c467ff3dc405b37b771608489b8f3c102cd"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_34cycles.csv",
+      "bytes": 38758933,
+      "sha256": "d970cd074cfc465803aab52271203166dd9533639d9c2006a3ce15696b151433"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_34cycles.pdf",
+      "bytes": 311820715,
+      "sha256": "6f578467052282c6e9657c4edb2dea8e193cf33ba577956d831639fa7ccbc869"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_34cycles.pkl",
+      "bytes": 51514264,
+      "sha256": "2210d5441ccc5e059a7864d25bade549eb5ec0a8900f8b425774d665bce70d68"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_34cycles_ModeLabel.csv",
+      "bytes": 4355894,
+      "sha256": "595d419ef25dbd1c9a17511774f66a619643df03602f68cd0d0cb49031862cbf"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_34cycles_ModeLabel.pkl",
+      "bytes": 4546282,
+      "sha256": "9d399acd2a0c3aa2b7313dd72b0a91422b4701d2ef18bba0ab5314ba492883bf"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_4cycles.csv",
+      "bytes": 4565756,
+      "sha256": "af66485ea401645a24b1423d0ef645845724f38c1e0cf07e47349e47284552f0"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_4cycles.pdf",
+      "bytes": 39845016,
+      "sha256": "78c1bbec2c2da48d79ae7faf8ac07723a561cdba3b8987112756dfbebd54e6d4"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_4cycles.pkl",
+      "bytes": 6061698,
+      "sha256": "5113736fab93cf747848c48dcb6afd62e3ee5b5597a6e771cc80684cc3567c9f"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_4cycles_ModeLabel.csv",
+      "bytes": 512479,
+      "sha256": "8c5646b7984fb1dcf53fd54ff4e899a6f2d07219e44e2a7ff94a745c822b7957"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_4cycles_ModeLabel.pkl",
+      "bytes": 535756,
+      "sha256": "2af680b0c7fae978c98ffcbee112ffae8f25f0a318d9461f31965a6ed1bb8daf"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_90cycles.csv",
+      "bytes": 101514741,
+      "sha256": "41e9409cd2bfea6acea0b5a9b562d6d7ff250a4cb5af8f5e425c02875fb8cdb4"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_90cycles.pdf",
+      "bytes": 792712523,
+      "sha256": "34cef4f0c2f4f6013182f5a3185ca10f60fe797c5242b0809a9798b10051c717"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_90cycles.pkl",
+      "bytes": 136356232,
+      "sha256": "765592f19fd6be1d0b571481921270882a12b11d8bdc605b030162b0de91a886"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_90cycles_ModeLabel.csv",
+      "bytes": 11530031,
+      "sha256": "ba3fd090f804b4972a03256c9da027221471b484cc8e04574d4b96ef761904dd"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_90cycles_ModeLabel.pkl",
+      "bytes": 12032338,
+      "sha256": "58dc8d6fbd9d4d790bb2d525b03b8bc5a3813a62e6207e3e8b585795b07d3866"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_94cycles.csv",
+      "bytes": 105854391,
+      "sha256": "066678c5893c0250778ff6bf3c080c255203f0d4d32fd1fc6c9cb6e58bc0fe54"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_94cycles.pdf",
+      "bytes": 829912015,
+      "sha256": "c57a2f05046669d430f63d28988dcddb7a2d1c2b1e7ff546d1e5643b0be9d20d"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_94cycles.pkl",
+      "bytes": 142415304,
+      "sha256": "3c5f1537723c9ec7242599020f70df8609a897f419090cd3855441562777dd5e"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_94cycles_ModeLabel.csv",
+      "bytes": 12042379,
+      "sha256": "e29c38e511dd42376d685aefa21e4ac14ebcf7c494eea4b8c0aca8deb44fd312"
+    },
+    {
+      "path": "XJTU-SPS for MR/XJTU-SPS for MR_94cycles_ModeLabel.pkl",
+      "bytes": 12566962,
+      "sha256": "cb17a32b8c07a5050efe480608bd749031408b11af4938d9a1c192259a1990b8"
+    },
+    {
+      "path": "XJTU-SPS for MR/readme.md",
+      "bytes": 1998,
+      "sha256": "42b8933033060aec13fef18463d28913f5241bc0b32e4a150b206cd665858544"
+    },
+    {
+      "path": "original data/2024.10.18_normal/2024.10.18_normal.csv",
+      "bytes": 27378607,
+      "sha256": "ecb4168a16ca219c73e8add36197e80f1599f824987798a409fe74e21039918b"
+    },
+    {
+      "path": "original data/2024.10.18_normal/2024.10.18_normal.pdf",
+      "bytes": 960899,
+      "sha256": "aec29f25b2c7e8764f910ab2d1106a7c1c58230fb4d01a7e284a45650f997179"
+    },
+    {
+      "path": "original data/2024.10.18_normal/2024.10.18_normal.pkl",
+      "bytes": 36361688,
+      "sha256": "2cedc93e64178bc6a2f41f52e9dc76f9a600c7e73d3b727e8be98f797a39f528"
+    },
+    {
+      "path": "original data/2024.10.18_normal/2024.10.18_normal_Work_Condition.csv",
+      "bytes": 4291777,
+      "sha256": "1e552e480c7a01528d33ef996f3cdaa3c031bbcedc184f41d4498975bd40fb06"
+    },
+    {
+      "path": "original data/2024.10.18_normal/2024.10.18_normal_Work_Condition.pdf",
+      "bytes": 92778,
+      "sha256": "440f2e87ef2afd804fe5ea4753e67148430e051c0de0e1bfbd06583140282b17"
+    },
+    {
+      "path": "original data/2024.10.18_normal/2024.10.18_normal_Work_Condition.pkl",
+      "bytes": 5348186,
+      "sha256": "80a05a1268355c663a2af26370b6b94c9fb618958dfb949be707af303e251713"
+    },
+    {
+      "path": "original data/2024.10.18_normal/readme.txt",
+      "bytes": 66,
+      "sha256": "f50e0849b2778de3bb3a638857d606b709abb427f1d9351595d12b9e268836de"
+    },
+    {
+      "path": "original data/2024.10.20_normal/2024.10.20_normal.csv",
+      "bytes": 20484170,
+      "sha256": "403c173705b379842bdbde1f290c2bbe578a830a20ebaf4edb869b98232d3588"
+    },
+    {
+      "path": "original data/2024.10.20_normal/2024.10.20_normal.pdf",
+      "bytes": 926972,
+      "sha256": "0a0a498de08ca790dd84277fc885a6ac65c4c101cb68adf87814a32128517957"
+    },
+    {
+      "path": "original data/2024.10.20_normal/2024.10.20_normal.pkl",
+      "bytes": 27273080,
+      "sha256": "084b305254ae81d81b839bc5ec095a360d7b8705e81f1fd8d110895a489824d2"
+    },
+    {
+      "path": "original data/2024.10.20_normal/2024.10.20_normal_Work_Condition.csv",
+      "bytes": 3219022,
+      "sha256": "8d16e37601f70f7f9f9ed1fb435577a8fed0307f1ff8a3104186839e9953125a"
+    },
+    {
+      "path": "original data/2024.10.20_normal/2024.10.20_normal_Work_Condition.pdf",
+      "bytes": 90997,
+      "sha256": "ba5bb795b812cd7bb63b3b2a5633ba6efece8bf649bdb46cc3aa6a4a35f868a1"
+    },
+    {
+      "path": "original data/2024.10.20_normal/2024.10.20_normal_Work_Condition.pkl",
+      "bytes": 4011626,
+      "sha256": "80eb580df6d74b5fc5ffd9a05724cf6c2f07ef2f5765a3d03a8dc5e1ad810808"
+    },
+    {
+      "path": "original data/2024.10.20_normal/readme.txt",
+      "bytes": 66,
+      "sha256": "3a31bf4e46b305754e3665fcc34149b82e08a3ae216a66e2c04afd4457ab650c"
+    },
+    {
+      "path": "original data/2024.10.23_normal/2024.10.23_normal.csv",
+      "bytes": 105854391,
+      "sha256": "066678c5893c0250778ff6bf3c080c255203f0d4d32fd1fc6c9cb6e58bc0fe54"
+    },
+    {
+      "path": "original data/2024.10.23_normal/2024.10.23_normal.pdf",
+      "bytes": 1237902,
+      "sha256": "62205e6d0d3e4f7e06265f7d46a8a1fdfb6d31b907b234fc469cd4bf358ecdec"
+    },
+    {
+      "path": "original data/2024.10.23_normal/2024.10.23_normal.pkl",
+      "bytes": 142415304,
+      "sha256": "3c5f1537723c9ec7242599020f70df8609a897f419090cd3855441562777dd5e"
+    },
+    {
+      "path": "original data/2024.10.23_normal/2024.10.23_normal_Work_Condition.csv",
+      "bytes": 16809555,
+      "sha256": "37b4514626804df247e314dc2f5a5b48436f16100fc832dc020d147df42f7bfc"
+    },
+    {
+      "path": "original data/2024.10.23_normal/2024.10.23_normal_Work_Condition.pdf",
+      "bytes": 102049,
+      "sha256": "4568e7b2f7e5a446617f403776cebb0637595183fa7a4808a16c8b0bfc5e7f9c"
+    },
+    {
+      "path": "original data/2024.10.23_normal/2024.10.23_normal_Work_Condition.pkl",
+      "bytes": 20944306,
+      "sha256": "2db5560718ee00656034f18270cd79ab96916a20c5a19c4db362c4e20754c52f"
+    },
+    {
+      "path": "original data/2024.10.23_normal/readme.txt",
+      "bytes": 66,
+      "sha256": "d466f84da5a29e1d212ff2cbafde264dcf326e87adb8e2851d3d3d62d11e767c"
+    },
+    {
+      "path": "original data/2024.10.29_normal/2024.10.29_normal.csv",
+      "bytes": 101514741,
+      "sha256": "41e9409cd2bfea6acea0b5a9b562d6d7ff250a4cb5af8f5e425c02875fb8cdb4"
+    },
+    {
+      "path": "original data/2024.10.29_normal/2024.10.29_normal.pdf",
+      "bytes": 1217990,
+      "sha256": "0ae34dbcad777eb1c36b900804af59267e766265d34053d74f54b11059772930"
+    },
+    {
+      "path": "original data/2024.10.29_normal/2024.10.29_normal.pkl",
+      "bytes": 136356232,
+      "sha256": "765592f19fd6be1d0b571481921270882a12b11d8bdc605b030162b0de91a886"
+    },
+    {
+      "path": "original data/2024.10.29_normal/2024.10.29_normal_Work_Condition.csv",
+      "bytes": 16094398,
+      "sha256": "3a5d2b040bca45c0a0c3033a8799a323003635080308399b794019ddfb1eab28"
+    },
+    {
+      "path": "original data/2024.10.29_normal/2024.10.29_normal_Work_Condition.pdf",
+      "bytes": 101665,
+      "sha256": "112b90b20e7560e33c8c6d251066e99bcc559b40b8e9fb3340361586e979c7ed"
+    },
+    {
+      "path": "original data/2024.10.29_normal/2024.10.29_normal_Work_Condition.pkl",
+      "bytes": 20053266,
+      "sha256": "3d8978e7a2c46892a7272951375ea24ac8d16d9a9cc7782211447ab49da2664b"
+    },
+    {
+      "path": "original data/2024.10.29_normal/readme.txt",
+      "bytes": 66,
+      "sha256": "67677fc5efb1d530e1d465aef7fffb3b299bd05f5547fa5a85925243c30b3dc8"
+    },
+    {
+      "path": "original data/2024.9.18_normal/2024.9.18_normal.csv",
+      "bytes": 4565756,
+      "sha256": "af66485ea401645a24b1423d0ef645845724f38c1e0cf07e47349e47284552f0"
+    },
+    {
+      "path": "original data/2024.9.18_normal/2024.9.18_normal.pdf",
+      "bytes": 622737,
+      "sha256": "2b4997587877f145b737d26e7e3ee9271ea3d09b41f1e35cbb5cac4601c4bd81"
+    },
+    {
+      "path": "original data/2024.9.18_normal/2024.9.18_normal.pkl",
+      "bytes": 6061698,
+      "sha256": "5113736fab93cf747848c48dcb6afd62e3ee5b5597a6e771cc80684cc3567c9f"
+    },
+    {
+      "path": "original data/2024.9.18_normal/2024.9.18_normal_Work_Condition.csv",
+      "bytes": 715388,
+      "sha256": "1b5c62b4e3d44dcb80731d1a985db08e227703a468ef0a866a20f98d616abfac"
+    },
+    {
+      "path": "original data/2024.9.18_normal/2024.9.18_normal_Work_Condition.pdf",
+      "bytes": 88681,
+      "sha256": "3e608298ad8410f5df4886b3c2ff51e75c1069ec2af759d58fcaa75a424b37fc"
+    },
+    {
+      "path": "original data/2024.9.18_normal/2024.9.18_normal_Work_Condition.pkl",
+      "bytes": 892300,
+      "sha256": "1359b1d267664ed10e6cde288f45622ef2aa092e48246352eae8d203043defd0"
+    },
+    {
+      "path": "original data/2024.9.18_normal/readme.txt",
+      "bytes": 50,
+      "sha256": "eb73a67a6464e0c2b2ac2bc0de7ea8dddfba0b27984fb6a28c4aced34d79bd53"
+    },
+    {
+      "path": "original data/2024.9.19_normal/2024.9.19_normal.csv",
+      "bytes": 38758933,
+      "sha256": "d970cd074cfc465803aab52271203166dd9533639d9c2006a3ce15696b151433"
+    },
+    {
+      "path": "original data/2024.9.19_normal/2024.9.19_normal.pdf",
+      "bytes": 1010315,
+      "sha256": "552de56ac8f6ff4c3dc8d67971c2be0dd71d01e9fa79c1242b5d8cfbc36cfad7"
+    },
+    {
+      "path": "original data/2024.9.19_normal/2024.9.19_normal.pkl",
+      "bytes": 51514264,
+      "sha256": "2210d5441ccc5e059a7864d25bade549eb5ec0a8900f8b425774d665bce70d68"
+    },
+    {
+      "path": "original data/2024.9.19_normal/2024.9.19_normal_Work_Condition.csv",
+      "bytes": 6080275,
+      "sha256": "fed4925fa68af7dacd78765228f69e4acb425cb8dc57f78a87d18a00e0770086"
+    },
+    {
+      "path": "original data/2024.9.19_normal/2024.9.19_normal_Work_Condition.pdf",
+      "bytes": 95304,
+      "sha256": "6e3df43f485aa5384f72424c7dcb99aa806a69e0a9c380308646de7f34ab062e"
+    },
+    {
+      "path": "original data/2024.9.19_normal/2024.9.19_normal_Work_Condition.pkl",
+      "bytes": 7576506,
+      "sha256": "2f0637eb932006762f04fd8ba5fe9c164f441127ab0823252bb5a9a6a3684120"
+    },
+    {
+      "path": "original data/2024.9.19_normal/readme.txt",
+      "bytes": 66,
+      "sha256": "2daffce481c385323a82a3aad7387b7233ace1a892d48cf3892cd9a58ae28ab8"
+    },
+    {
+      "path": "original data/BAT_degradation/BAT_degradation.csv",
+      "bytes": 4535934,
+      "sha256": "678822df8f510f752e47a8d8e672ef3a7b812b16cc29351945963ead3182babe"
+    },
+    {
+      "path": "original data/BAT_degradation/BAT_degradation.pdf",
+      "bytes": 640304,
+      "sha256": "04ebb66e0a759ef7f29b831f5092b74d530d0ccead2c5d10df03ae97a12ea293"
+    },
+    {
+      "path": "original data/BAT_degradation/BAT_degradation.pkl",
+      "bytes": 6061154,
+      "sha256": "148029528577811e5df83217f389c749d2aaf2060118a722f8dfd067f850da71"
+    },
+    {
+      "path": "original data/BAT_degradation/BAT_degradation_AnomalyLabel.csv",
+      "bytes": 512436,
+      "sha256": "b80ab7a8f145fe9b5d4311e4195a05401a9b4a5b7d181352fad7aafe057be5dc"
+    },
+    {
+      "path": "original data/BAT_degradation/BAT_degradation_AnomalyLabel.pkl",
+      "bytes": 357479,
+      "sha256": "4845832ed16ddbae1afbf00982f9b4afaf2522bd52c8ad82ee1b2cbed53b26f0"
+    },
+    {
+      "path": "original data/BAT_degradation/BAT_degradation_Work_Condition.csv",
+      "bytes": 715321,
+      "sha256": "462cdc3f04ae6a4b3255fe1495fdbc9a67403814f3a6f2bd08f5687c17eec784"
+    },
+    {
+      "path": "original data/BAT_degradation/BAT_degradation_Work_Condition.pdf",
+      "bytes": 88736,
+      "sha256": "f6e82ac01f8444042e6769e84d6c7ac287c4c1dc7f58d96912f8341275a6d62f"
+    },
+    {
+      "path": "original data/BAT_degradation/BAT_degradation_Work_Condition.pkl",
+      "bytes": 892220,
+      "sha256": "c1e7a3be353ee9700d3746281a4c8b0a3d6080ab97cece10dbe3bf571b68a1d9"
+    },
+    {
+      "path": "original data/BAT_degradation/readme.txt",
+      "bytes": 65,
+      "sha256": "9d03b10aae5c66b4db16bbfbfa5065618f9d8913da5a9274110aab96387a3ca1"
+    },
+    {
+      "path": "original data/BAT_open circuit/BAT_open circuit.csv",
+      "bytes": 4530823,
+      "sha256": "660fc6273295c71815bd3cbc0d92f763ea690316d0cd84ec544a3ea17812025f"
+    },
+    {
+      "path": "original data/BAT_open circuit/BAT_open circuit.pdf",
+      "bytes": 648300,
+      "sha256": "c770050b0eb2bff0c9aa1df59c3b1d53488abae56d72a67f45cd3e24fe45bf54"
+    },
+    {
+      "path": "original data/BAT_open circuit/BAT_open circuit.pkl",
+      "bytes": 6060066,
+      "sha256": "601044ba92e91716b8e57fb653cb701c7aed8e3b523064737683f963152ff9bd"
+    },
+    {
+      "path": "original data/BAT_open circuit/BAT_open circuit_AnomalyLabel.csv",
+      "bytes": 512344,
+      "sha256": "227407710666196464fbe6c52136a622e3730599886773f8d1b1fb0525a76b1c"
+    },
+    {
+      "path": "original data/BAT_open circuit/BAT_open circuit_AnomalyLabel.pkl",
+      "bytes": 357415,
+      "sha256": "994b5b05b4c68a2da4580759f8f1c78ad0d2471104c812f23dc87cb452d94448"
+    },
+    {
+      "path": "original data/BAT_open circuit/BAT_open circuit_Work_Condition.csv",
+      "bytes": 715200,
+      "sha256": "3df133db885acffd204230b8b6d308896fe2b56c44eee0fc20a8944ef44716bf"
+    },
+    {
+      "path": "original data/BAT_open circuit/BAT_open circuit_Work_Condition.pdf",
+      "bytes": 88699,
+      "sha256": "0bc817f05c53d3067ef075131fe7ef259da8d1700a457d3dc5eae5e8f22af499"
+    },
+    {
+      "path": "original data/BAT_open circuit/BAT_open circuit_Work_Condition.pkl",
+      "bytes": 892060,
+      "sha256": "9867edf53f26978f37ab456022af80a4fc6ed094a782542302766e5c6a8a4ba6"
+    },
+    {
+      "path": "original data/BAT_open circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "817476a84da03461287283d2786b73c150b946f18bb0c4c2e34cc4b5994bbea5"
+    },
+    {
+      "path": "original data/BCR_increased power loss/BCR_increased power loss.csv",
+      "bytes": 4532573,
+      "sha256": "98b5a6d845571d75b324a8c0007c03dddfbc6efe1bbf7b181d3b7c73248ed1e8"
+    },
+    {
+      "path": "original data/BCR_increased power loss/BCR_increased power loss.pdf",
+      "bytes": 537246,
+      "sha256": "52e42aaadab3069f1a415c470c1070a9226d0699dadd638c723ccebc14daa731"
+    },
+    {
+      "path": "original data/BCR_increased power loss/BCR_increased power loss.pkl",
+      "bytes": 6061698,
+      "sha256": "4d8c0b68c3d05d1030069ace2ad5c0cdcec7cc5933f99fc72825c743894528e4"
+    },
+    {
+      "path": "original data/BCR_increased power loss/BCR_increased power loss_AnomalyLabel.csv",
+      "bytes": 512482,
+      "sha256": "b3d5f20a6d4d4228adb5f08bdb7314e1c2e518bd75014c88ddc91c7cf6190f28"
+    },
+    {
+      "path": "original data/BCR_increased power loss/BCR_increased power loss_AnomalyLabel.pkl",
+      "bytes": 357511,
+      "sha256": "827ba9065f9e4857fd33ee4294b4fe96853a0a65a4cc2f57ac23e6baac6ef293"
+    },
+    {
+      "path": "original data/BCR_increased power loss/BCR_increased power loss_Work_Condition.csv",
+      "bytes": 715391,
+      "sha256": "66bb68f7ba2403e266cd30f814c34350cb9619a05729d8fca323abd7414ae7c5"
+    },
+    {
+      "path": "original data/BCR_increased power loss/BCR_increased power loss_Work_Condition.pdf",
+      "bytes": 88678,
+      "sha256": "5ace39a60cb0205a3d593bea34af95427b7050cd073b7e38c3d2b8b8f3b29a47"
+    },
+    {
+      "path": "original data/BCR_increased power loss/BCR_increased power loss_Work_Condition.pkl",
+      "bytes": 892300,
+      "sha256": "519f672c48ac2f489ab76987410164db8288f9b0f34ec590475b42da82d52370"
+    },
+    {
+      "path": "original data/BCR_increased power loss/readme.txt",
+      "bytes": 65,
+      "sha256": "1803966704b0933638d6b74f1ee91832ceead337562157b2ddea1712c57f05c6"
+    },
+    {
+      "path": "original data/BCR_open circuit/BCR_open circuit.csv",
+      "bytes": 4417671,
+      "sha256": "4d22f3b6989359dee3c26990bc9691ecf2d48c9e69db20c5e66e41f38f99753f"
+    },
+    {
+      "path": "original data/BCR_open circuit/BCR_open circuit.pdf",
+      "bytes": 439822,
+      "sha256": "78c0176ab3cec4b45ff56b58f281ba32546c95e88a21a32920981b340385cc68"
+    },
+    {
+      "path": "original data/BCR_open circuit/BCR_open circuit.pkl",
+      "bytes": 6063330,
+      "sha256": "1b133870b35fe8390027d89147bfe0465a2b6467078e033ee26dcd4b4f3ef11f"
+    },
+    {
+      "path": "original data/BCR_open circuit/BCR_open circuit_AnomalyLabel.csv",
+      "bytes": 512620,
+      "sha256": "768ac30b5e05a859794a2ee2bcb5f7cb12e95534d19a7519eee98b2594b9c7d7"
+    },
+    {
+      "path": "original data/BCR_open circuit/BCR_open circuit_AnomalyLabel.pkl",
+      "bytes": 357607,
+      "sha256": "591d6de90aa3c2c320643e1417ae4f59499218cf08982d393ccc14600bb86937"
+    },
+    {
+      "path": "original data/BCR_open circuit/BCR_open circuit_Work_Condition.csv",
+      "bytes": 715585,
+      "sha256": "19ddcdb0bc011f7c39567c08be080396f4d5593bc467f288fe123997755e304e"
+    },
+    {
+      "path": "original data/BCR_open circuit/BCR_open circuit_Work_Condition.pdf",
+      "bytes": 88715,
+      "sha256": "3da8c8be3c4dffe3bde6187b7b80248943fed651997b2d5f45dc1def840790d8"
+    },
+    {
+      "path": "original data/BCR_open circuit/BCR_open circuit_Work_Condition.pkl",
+      "bytes": 892540,
+      "sha256": "818afcc32f32fd37e8ae95ea36632b2f645bfc9716ccbdfd35fe4ca14cb34cab"
+    },
+    {
+      "path": "original data/BCR_open circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "5320b353cb227bc71e57a968e087489e48fe4fee182f25b251caa7f9a39e3ee0"
+    },
+    {
+      "path": "original data/BCR_short circuit/BCR_short circuit.csv",
+      "bytes": 3797905,
+      "sha256": "62ce15175ad323d036b86fa184e5657b5c0ac0643e98550f7e40154ef8703327"
+    },
+    {
+      "path": "original data/BCR_short circuit/BCR_short circuit.pdf",
+      "bytes": 247566,
+      "sha256": "c2f6462ae64a9bf6f1b81b072dcc8a196909651ad19883c40e498e6c9c638154"
+    },
+    {
+      "path": "original data/BCR_short circuit/BCR_short circuit.pkl",
+      "bytes": 5895286,
+      "sha256": "55ce7f16cea6ae973fdcb75fcd7507e14dcc8c6ead02a6c09d7ba6d4f910384c"
+    },
+    {
+      "path": "original data/BCR_short circuit/BCR_short circuit_AnomalyLabel.csv",
+      "bytes": 498406,
+      "sha256": "93b8bd0371a26c2cf2af98f9a171e42e50134a20e8f371338ae88c433a40ba9c"
+    },
+    {
+      "path": "original data/BCR_short circuit/BCR_short circuit_AnomalyLabel.pkl",
+      "bytes": 347719,
+      "sha256": "5d15ef7c77154c1f1c533150fab9579b91ef4fe9986dbd7e145cf48c90f64bea"
+    },
+    {
+      "path": "original data/BCR_short circuit/BCR_short circuit_Work_Condition.csv",
+      "bytes": 696686,
+      "sha256": "81bdd662f9bba2df2311eaf3ae4bf2f74f7c9c204dcd9fb97c567c521b765556"
+    },
+    {
+      "path": "original data/BCR_short circuit/BCR_short circuit_Work_Condition.pdf",
+      "bytes": 88664,
+      "sha256": "ae93c01869633391008831aec212f10e966b8b89926dae5fafe9892ce643661f"
+    },
+    {
+      "path": "original data/BCR_short circuit/BCR_short circuit_Work_Condition.pkl",
+      "bytes": 867820,
+      "sha256": "da8b64b0d7f656fe504eefc41ce3a6d848123952a08620d6f56fd2afc3f6beee"
+    },
+    {
+      "path": "original data/BCR_short circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "b31840a6bd239481664d49b1549361fd026256d0b31fb4cece9ede8e89be1b5e"
+    },
+    {
+      "path": "original data/Bus_insulation breakdown/Bus_insulation breakdown.csv",
+      "bytes": 4363837,
+      "sha256": "3bd45812e952de24601d971373ab4a903e3c3d31449a1f4ff3f3b60a014e1897"
+    },
+    {
+      "path": "original data/Bus_insulation breakdown/Bus_insulation breakdown.pdf",
+      "bytes": 568669,
+      "sha256": "a6a9ae26f8633122b3e3b11f1f50dd17f84b5d18516454abfc90e889b5d68b3a"
+    },
+    {
+      "path": "original data/Bus_insulation breakdown/Bus_insulation breakdown.pkl",
+      "bytes": 6064962,
+      "sha256": "e96b968b1e56d607dacfc751de63effc0971ecd934c049c28ab0b6e8c09a9c4a"
+    },
+    {
+      "path": "original data/Bus_insulation breakdown/Bus_insulation breakdown_AnomalyLabel.csv",
+      "bytes": 512758,
+      "sha256": "3c8b109e9ee382e775d042bc1357c0b4496ecb098367459be1552dadeccbc2a3"
+    },
+    {
+      "path": "original data/Bus_insulation breakdown/Bus_insulation breakdown_AnomalyLabel.pkl",
+      "bytes": 357703,
+      "sha256": "317a1fc02fa7025d50bf75f02d0096030f6018655a8bf654855c32dd966971b3"
+    },
+    {
+      "path": "original data/Bus_insulation breakdown/Bus_insulation breakdown_Work_Condition.csv",
+      "bytes": 715771,
+      "sha256": "0d321759e50882bacdf024353d75a469370b545904e81430aa1738f11013a746"
+    },
+    {
+      "path": "original data/Bus_insulation breakdown/Bus_insulation breakdown_Work_Condition.pdf",
+      "bytes": 88669,
+      "sha256": "0bd67669bdd6b2eec53503779f0ca4605c5d52aef658cfccbd797c2caae8a405"
+    },
+    {
+      "path": "original data/Bus_insulation breakdown/Bus_insulation breakdown_Work_Condition.pkl",
+      "bytes": 892780,
+      "sha256": "15d92468062ae67458091f47c1fa67859ef22c38d28798d45975ff616b832ce0"
+    },
+    {
+      "path": "original data/Bus_insulation breakdown/readme.txt",
+      "bytes": 65,
+      "sha256": "6d20aae371bc613dcab3c70ff2a551fae9e78b37d1b6c02df78413cd5a03ced7"
+    },
+    {
+      "path": "original data/Bus_open circuit/Bus_open circuit.csv",
+      "bytes": 4179652,
+      "sha256": "e821a88f12368628b6471fc47e7a255fe4d430908bcb96a235cd9d7439714112"
+    },
+    {
+      "path": "original data/Bus_open circuit/Bus_open circuit.pdf",
+      "bytes": 465165,
+      "sha256": "80e708d2e13acf58602a079585a0b1b6c0b0ee42cb5a5cfbd1fc7fa42b14232a"
+    },
+    {
+      "path": "original data/Bus_open circuit/Bus_open circuit.pkl",
+      "bytes": 6065506,
+      "sha256": "5dd54409c8fa70eb360b54e05e482753688213fd872b6c49e89927ad476b6451"
+    },
+    {
+      "path": "original data/Bus_open circuit/Bus_open circuit_AnomalyLabel.csv",
+      "bytes": 512804,
+      "sha256": "edd514f0e56150f04f1d0c58fbedc57f781fc5f283beb49b9da1d80b32356f7d"
+    },
+    {
+      "path": "original data/Bus_open circuit/Bus_open circuit_AnomalyLabel.pkl",
+      "bytes": 357735,
+      "sha256": "705d0ebf61bae3e698edc4341a402418adee75e85341b4b9dd93e8a986d6ba54"
+    },
+    {
+      "path": "original data/Bus_open circuit/Bus_open circuit_Work_Condition.csv",
+      "bytes": 715837,
+      "sha256": "d2c975e7ebb203cd8b70e2f78419d822eb3b303839f5b96333d247a237395e9b"
+    },
+    {
+      "path": "original data/Bus_open circuit/Bus_open circuit_Work_Condition.pdf",
+      "bytes": 88697,
+      "sha256": "e7e03d684f84eee9fcbdfc4d6d5de61d9e359da962e306c3bf8628c64dd218fc"
+    },
+    {
+      "path": "original data/Bus_open circuit/Bus_open circuit_Work_Condition.pkl",
+      "bytes": 892860,
+      "sha256": "97cc6eb18fddcf211a75ad36bbea289b68b33f17c6c3f171296dcbc1ff181cad"
+    },
+    {
+      "path": "original data/Bus_open circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "d46e123f1817af1b1450cad31f0418721f091568b265b16376590b0c25752b4c"
+    },
+    {
+      "path": "original data/Bus_short circuit/Bus_short circuit.csv",
+      "bytes": 4185815,
+      "sha256": "8c31b4320f933ba27e4fbbf2021d872ac247719e7c781acdf2a4c115b20b8fc8"
+    },
+    {
+      "path": "original data/Bus_short circuit/Bus_short circuit.pdf",
+      "bytes": 548278,
+      "sha256": "21a7a606afa6b4045f8aa31bdf21c9537518f8d9c1b45bd5ea52824166ccf07b"
+    },
+    {
+      "path": "original data/Bus_short circuit/Bus_short circuit.pkl",
+      "bytes": 6066594,
+      "sha256": "bf09ec4f6d38aad6582b4e745f05612a1fef30360ebefd2fc1e385d16ecbcf8e"
+    },
+    {
+      "path": "original data/Bus_short circuit/Bus_short circuit_AnomalyLabel.csv",
+      "bytes": 512896,
+      "sha256": "c44e53d7ef972beba77375e961bb8e3a4768f1418495dc185874f76e4e86806e"
+    },
+    {
+      "path": "original data/Bus_short circuit/Bus_short circuit_AnomalyLabel.pkl",
+      "bytes": 357799,
+      "sha256": "26823fb6b56ccca1d1d82ea0a51495a6e40361370147b13f01a7c129aa32d491"
+    },
+    {
+      "path": "original data/Bus_short circuit/Bus_short circuit_Work_Condition.csv",
+      "bytes": 715962,
+      "sha256": "72057fff62fc637379ee791b113a3abc844dd6b30121e0a440d7d5e2b1f53a2f"
+    },
+    {
+      "path": "original data/Bus_short circuit/Bus_short circuit_Work_Condition.pdf",
+      "bytes": 88687,
+      "sha256": "1ca0c00b9258a146891ca7248d706fdd968f0384f9466c43a09291270697ad17"
+    },
+    {
+      "path": "original data/Bus_short circuit/Bus_short circuit_Work_Condition.pkl",
+      "bytes": 893020,
+      "sha256": "2c24083d335e79babf5e61052e805762d60439b16d7e174ca4fca1a864927a99"
+    },
+    {
+      "path": "original data/Bus_short circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "6d20aae371bc613dcab3c70ff2a551fae9e78b37d1b6c02df78413cd5a03ced7"
+    },
+    {
+      "path": "original data/Load1_open circuit/Load1_open circuit.csv",
+      "bytes": 4500121,
+      "sha256": "d99453543d6d2f7ae75d8e62be8850461fd77953d75ca987b21c7edfb43fffb1"
+    },
+    {
+      "path": "original data/Load1_open circuit/Load1_open circuit.pdf",
+      "bytes": 663455,
+      "sha256": "3dd3722c636c7965454077d1846c0ff1cafa45e0ea01cce01c2d68b14369a0a4"
+    },
+    {
+      "path": "original data/Load1_open circuit/Load1_open circuit.pkl",
+      "bytes": 6061426,
+      "sha256": "0390022333a72e35aa0cc903dc3c93c571ba89ecc10ea3440517bedc90e6f55c"
+    },
+    {
+      "path": "original data/Load1_open circuit/Load1_open circuit_AnomalyLabel.csv",
+      "bytes": 512459,
+      "sha256": "ce3faa7ddefc32c6a366c388195dc4cd8b873eefc9a83afb75ba4cd26811da5a"
+    },
+    {
+      "path": "original data/Load1_open circuit/Load1_open circuit_AnomalyLabel.pkl",
+      "bytes": 357495,
+      "sha256": "cfdddb2cd43f16efd9ae9721458613c1a36b193c6043289933be8c5f9a3bc900"
+    },
+    {
+      "path": "original data/Load1_open circuit/Load1_open circuit_Work_Condition.csv",
+      "bytes": 715354,
+      "sha256": "9ecc8c3f0c10d6b7c9808ed04157e7abd282bade7ab8f148133ec7db6c9c976c"
+    },
+    {
+      "path": "original data/Load1_open circuit/Load1_open circuit_Work_Condition.pdf",
+      "bytes": 88697,
+      "sha256": "0afe79967be26533567624dbf454bf577f67111797a35e8453b0f6df038fef15"
+    },
+    {
+      "path": "original data/Load1_open circuit/Load1_open circuit_Work_Condition.pkl",
+      "bytes": 892260,
+      "sha256": "9ce020f38ddf2f71fb2bb43fb8656a4a7b2812b1a89c6e86b0ba3ec0063e7c9d"
+    },
+    {
+      "path": "original data/Load1_open circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "b8247f3d91b9cc1661ed2eccae57099f0818397d844879517d78d6351311451b"
+    },
+    {
+      "path": "original data/Load2_open circuit/Load2_open circuit.csv",
+      "bytes": 4507494,
+      "sha256": "df9cdb7abcbdea0004d80228279ed844ac46b4d413c826674edc3393943ab251"
+    },
+    {
+      "path": "original data/Load2_open circuit/Load2_open circuit.pdf",
+      "bytes": 659304,
+      "sha256": "70fb4f50d8020be4d99d09266d8636b296e43f724e407c8fc2af69a9e6efc1d8"
+    },
+    {
+      "path": "original data/Load2_open circuit/Load2_open circuit.pkl",
+      "bytes": 6061426,
+      "sha256": "de13890333ef5354a172f68180a27fef48b99f72692b3592a928bb7ce6df4308"
+    },
+    {
+      "path": "original data/Load2_open circuit/Load2_open circuit_AnomalyLabel.csv",
+      "bytes": 512459,
+      "sha256": "2f05efa7a7504ba9de09bc7ac3f70b51f3f786a986b8dc84267d44cac0ddd20f"
+    },
+    {
+      "path": "original data/Load2_open circuit/Load2_open circuit_AnomalyLabel.pkl",
+      "bytes": 357495,
+      "sha256": "de284f3e5bcd7d18885c3b098a80101a6fa52069093db2e4a2aaf5191e4d6ab0"
+    },
+    {
+      "path": "original data/Load2_open circuit/Load2_open circuit_Work_Condition.csv",
+      "bytes": 715354,
+      "sha256": "fdac6e6b8f9c4fc26febc486d22262e4f2397a7a8481bd1239d0cf83206e94d3"
+    },
+    {
+      "path": "original data/Load2_open circuit/Load2_open circuit_Work_Condition.pdf",
+      "bytes": 88717,
+      "sha256": "faeaab9ab428245d57ab457ac29550ad127d9b66fe124f07a7d3daba6ffb5f35"
+    },
+    {
+      "path": "original data/Load2_open circuit/Load2_open circuit_Work_Condition.pkl",
+      "bytes": 892260,
+      "sha256": "57413227372706bbcee98746d2ba6f13c20dac572a9b842e6f50a2b7392c8da4"
+    },
+    {
+      "path": "original data/Load2_open circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "bff6aa0c5675b68182d7ea980dddccdc1e818f801fb8dd6717531c8b939137b8"
+    },
+    {
+      "path": "original data/Load3_open circuit/Load3_open circuit.csv",
+      "bytes": 4509063,
+      "sha256": "f5e06c5666816eb07e8a25e578a5836b6bad635964b64f964a75c85b699ec883"
+    },
+    {
+      "path": "original data/Load3_open circuit/Load3_open circuit.pdf",
+      "bytes": 649263,
+      "sha256": "d64cbb3e0dce3f8904a1a4e32718cdd51be8f9f58687e1bdc47f455407f4fa31"
+    },
+    {
+      "path": "original data/Load3_open circuit/Load3_open circuit.pkl",
+      "bytes": 6061426,
+      "sha256": "30aa88d4db49661f8625cc9f7e8e61ba94b2f1feee8596adc4abd84203b16cec"
+    },
+    {
+      "path": "original data/Load3_open circuit/Load3_open circuit_AnomalyLabel.csv",
+      "bytes": 512459,
+      "sha256": "a8103434e82bba64f45a7f004e2eaeb64497597ef48ec10db97a6c84b9884eb5"
+    },
+    {
+      "path": "original data/Load3_open circuit/Load3_open circuit_AnomalyLabel.pkl",
+      "bytes": 357495,
+      "sha256": "e5ad668808e4fd0d44b9b87cc03e71d9f32bf91e1db1e7a06b67057e1c1c12a0"
+    },
+    {
+      "path": "original data/Load3_open circuit/Load3_open circuit_Work_Condition.csv",
+      "bytes": 715354,
+      "sha256": "d379a3338ca3e3451a8912915dc851f78484267172e3b194dfa11fc032df2088"
+    },
+    {
+      "path": "original data/Load3_open circuit/Load3_open circuit_Work_Condition.pdf",
+      "bytes": 88709,
+      "sha256": "0ec74da0500aa2886d0b3d3bbb1b27fa2da1444224eed5494059f1fb9bd2e0cb"
+    },
+    {
+      "path": "original data/Load3_open circuit/Load3_open circuit_Work_Condition.pkl",
+      "bytes": 892260,
+      "sha256": "c1a99eeae13aa0629ee76146ff0a05afc7502a8fd866ea48c9faa220d9abcda1"
+    },
+    {
+      "path": "original data/Load3_open circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "c065b55f4f413753c750453910c1b4e8550d94f08aeeea3b4d58587c6724acfd"
+    },
+    {
+      "path": "original data/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit.csv",
+      "bytes": 4431524,
+      "sha256": "777ca728630b40f6f39e5ecc57e2c1584d89c70c79c849f6982568288e2ef01c"
+    },
+    {
+      "path": "original data/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit.pdf",
+      "bytes": 617622,
+      "sha256": "fc6e63a916e9295a4fe13c84fcc2f7515451348a72b5a90cae1bbaada64298d2"
+    },
+    {
+      "path": "original data/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit.pkl",
+      "bytes": 6063602,
+      "sha256": "8c19aa23ffe3ceee5412a04bf3924e8d49fcd059d972755a2fe3c77d4d4da985"
+    },
+    {
+      "path": "original data/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_AnomalyLabel.csv",
+      "bytes": 512643,
+      "sha256": "6023f6a5f76254a75db426c0ac947d9334178d257626c7c2e6fcaa070f9a0b4c"
+    },
+    {
+      "path": "original data/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_AnomalyLabel.pkl",
+      "bytes": 357623,
+      "sha256": "91b89f0e1b95746643f2a6e6a3a191474bed5f9802ed35e0578539e2c8cc6f72"
+    },
+    {
+      "path": "original data/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_Work_Condition.csv",
+      "bytes": 715618,
+      "sha256": "9371133074669e6e09f45a501e1fc09c1a38c8fac48c8de135559e9005f12383"
+    },
+    {
+      "path": "original data/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_Work_Condition.pdf",
+      "bytes": 88705,
+      "sha256": "ae1576fa1a491a8a76e971ad519da41503f07201eb2da28e7c0c4d39da639af2"
+    },
+    {
+      "path": "original data/PDM1_open circuit or short circuit/PDM1_open circuit or short circuit_Work_Condition.pkl",
+      "bytes": 892580,
+      "sha256": "3c981a6365bc25cb8a614513fdeb3f31050a1c5efcc807301ddf16b0d1f998c8"
+    },
+    {
+      "path": "original data/PDM1_open circuit or short circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "c065b55f4f413753c750453910c1b4e8550d94f08aeeea3b4d58587c6724acfd"
+    },
+    {
+      "path": "original data/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit.csv",
+      "bytes": 4462254,
+      "sha256": "cbc30e9578fc0bab7ee01c9def8baed0a356e26636c3931a2a077ad98e680308"
+    },
+    {
+      "path": "original data/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit.pdf",
+      "bytes": 597065,
+      "sha256": "4dd5dfa3bdb925d9aab5bd7f8dc82b531e847df247a2d8a08c219e3ca6bba7c8"
+    },
+    {
+      "path": "original data/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit.pkl",
+      "bytes": 6062514,
+      "sha256": "08b4762b7cb6d6e3232eec16e37cc8bf354a78ac1a1906d2b11cdb347976329d"
+    },
+    {
+      "path": "original data/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_AnomalyLabel.csv",
+      "bytes": 512551,
+      "sha256": "1247e0fcdf1c8091beedcc791411274a4bfb0715303b1629c91144ec63e06645"
+    },
+    {
+      "path": "original data/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_AnomalyLabel.pkl",
+      "bytes": 357559,
+      "sha256": "06286f22033561ec147d0c2fe8aa6995f3eda9589f91175b8a22660aef8888b5"
+    },
+    {
+      "path": "original data/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_Work_Condition.csv",
+      "bytes": 715487,
+      "sha256": "d50161bf953cd63a59639068a41cca4f81425e8c89be3cc4fcb6d40f0bad636d"
+    },
+    {
+      "path": "original data/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_Work_Condition.pdf",
+      "bytes": 88714,
+      "sha256": "8dcf277a68cc4c026aa1d3712ee15da7109dec53f474d6c700081b3030202961"
+    },
+    {
+      "path": "original data/PDM2_open circuit or short circuit/PDM2_open circuit or short circuit_Work_Condition.pkl",
+      "bytes": 892420,
+      "sha256": "8ffd6bae60f1aef8056bae23a0ab8e8144c9585006b819d79718332185dfab4c"
+    },
+    {
+      "path": "original data/PDM2_open circuit or short circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "6d20aae371bc613dcab3c70ff2a551fae9e78b37d1b6c02df78413cd5a03ced7"
+    },
+    {
+      "path": "original data/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit.csv",
+      "bytes": 4444982,
+      "sha256": "c488d5573c5cb80f67726e524ba1fa1119e0407272752e1708cfde9fa3760457"
+    },
+    {
+      "path": "original data/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit.pdf",
+      "bytes": 628884,
+      "sha256": "7c27f69cb192f96687f50efcfacf94d8e2933861e373f9ce547de9d444b344d6"
+    },
+    {
+      "path": "original data/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit.pkl",
+      "bytes": 6063058,
+      "sha256": "8c2cefb96dc9328b81f16f7db2d6f8ad6187969bb184daab259a669870c07e1a"
+    },
+    {
+      "path": "original data/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_AnomalyLabel.csv",
+      "bytes": 512597,
+      "sha256": "e6d4e072afc404e72b2af5b519a0952ed04d5b7df77a4508880b8c420ac97e5e"
+    },
+    {
+      "path": "original data/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_AnomalyLabel.pkl",
+      "bytes": 357591,
+      "sha256": "ddf981f4cee7319196ff37c8b516375797d8ff30b7100a093034f061b700bf2e"
+    },
+    {
+      "path": "original data/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_Work_Condition.csv",
+      "bytes": 715554,
+      "sha256": "a25a8cdfb20852acf7bacad9abb92e0c8a3d05346ef3d189df779d79d969f7ba"
+    },
+    {
+      "path": "original data/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_Work_Condition.pdf",
+      "bytes": 88718,
+      "sha256": "ee43aeb5d26eb4198d52fe5748e085330cf7b1f2fa69d0d4eb90f4a3bdc6674d"
+    },
+    {
+      "path": "original data/PDM3_open circuit or short circuit/PDM3_open circuit or short circuit_Work_Condition.pkl",
+      "bytes": 892500,
+      "sha256": "5d7d084686ca3cdd719447400e4f995d9050395b787217898b4e1c994d2bfde6"
+    },
+    {
+      "path": "original data/PDM3_open circuit or short circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "3b6e883c38aa22a0cd4e52c8a281c41dde1eda85e096ee59a546fb0e9e1b1701"
+    },
+    {
+      "path": "original data/SA_component deterioration/SA_component deterioration.csv",
+      "bytes": 4534284,
+      "sha256": "a8f0fb5a82551ced5fe0e9d30d04d0ec08fee34d318c421c787643e7cdee4039"
+    },
+    {
+      "path": "original data/SA_component deterioration/SA_component deterioration.pdf",
+      "bytes": 653324,
+      "sha256": "75d72959700d3abf05c961e7cf1e1bd37fbe085376079e1f031a6c631565486c"
+    },
+    {
+      "path": "original data/SA_component deterioration/SA_component deterioration.pkl",
+      "bytes": 6061970,
+      "sha256": "7f6cd4a7e8a79f97754060ee4c5895cabaa55e9f19247c011238d29eaac938f4"
+    },
+    {
+      "path": "original data/SA_component deterioration/SA_component deterioration_AnomalyLabel.csv",
+      "bytes": 512505,
+      "sha256": "d5e10e545747524e85cae6b66ccc106ef006201d3dc140c47478f26f4aff9b02"
+    },
+    {
+      "path": "original data/SA_component deterioration/SA_component deterioration_AnomalyLabel.pkl",
+      "bytes": 357527,
+      "sha256": "50242bd1b44554959adc2d16dae30a4dda1494c1a07bdeb17e72f05af174498c"
+    },
+    {
+      "path": "original data/SA_component deterioration/SA_component deterioration_Work_Condition.csv",
+      "bytes": 715420,
+      "sha256": "75d7674841ff9e6546f4dd7fcef51fe1e2248e4eb419b7dbac508b147b6c71c0"
+    },
+    {
+      "path": "original data/SA_component deterioration/SA_component deterioration_Work_Condition.pdf",
+      "bytes": 88711,
+      "sha256": "51032dcc9c8f4d04900cf42708be76fed23c8fe5eb47eee542c06b9592b91176"
+    },
+    {
+      "path": "original data/SA_component deterioration/SA_component deterioration_Work_Condition.pkl",
+      "bytes": 892340,
+      "sha256": "b1264716b16b94916a4fba2159d9d76443c4b7da8edb79d7582fc587b9846e47"
+    },
+    {
+      "path": "original data/SA_component deterioration/readme.txt",
+      "bytes": 65,
+      "sha256": "22cddbbfebe76e958f31a277aa1d77163200c647eb7e8695962820cfafbabd01"
+    },
+    {
+      "path": "original data/SA_partial component or branch open circuit/SA_partial component or branch open circuit.csv",
+      "bytes": 4545275,
+      "sha256": "df38ef831dda609c8b41bcb282683daafef5c265439c6564b1aadb0f3b7d55dc"
+    },
+    {
+      "path": "original data/SA_partial component or branch open circuit/SA_partial component or branch open circuit.pdf",
+      "bytes": 637610,
+      "sha256": "9c221e475b44eace6dcfb1cf718c4299523428ccac818e0f9fa1f7162d9b26ec"
+    },
+    {
+      "path": "original data/SA_partial component or branch open circuit/SA_partial component or branch open circuit.pkl",
+      "bytes": 6061698,
+      "sha256": "69fd64a2474df7279332d58c6b7a94b8ce5c2b9a112b8799d9887332b138a38c"
+    },
+    {
+      "path": "original data/SA_partial component or branch open circuit/SA_partial component or branch open circuit_AnomalyLabel.csv",
+      "bytes": 512482,
+      "sha256": "ec3383d47e65f93fe49ae7cb3ba5d04fbb428d2a5ff1d9de81987e1dad420093"
+    },
+    {
+      "path": "original data/SA_partial component or branch open circuit/SA_partial component or branch open circuit_AnomalyLabel.pkl",
+      "bytes": 357511,
+      "sha256": "b2ecdad8e5121819913126fdb5e77f19f73c0cb8d398ec70d33e8b7e532866fd"
+    },
+    {
+      "path": "original data/SA_partial component or branch open circuit/SA_partial component or branch open circuit_Work_Condition.csv",
+      "bytes": 715388,
+      "sha256": "7c7085fa71f2537485efce14fecb3b4db2e9760d211307f167a97664122ddac3"
+    },
+    {
+      "path": "original data/SA_partial component or branch open circuit/SA_partial component or branch open circuit_Work_Condition.pdf",
+      "bytes": 88666,
+      "sha256": "293c2c4ed01913d0642f643b1bee7c2be96fea02f721ebc8f1cab7154c07c809"
+    },
+    {
+      "path": "original data/SA_partial component or branch open circuit/SA_partial component or branch open circuit_Work_Condition.pkl",
+      "bytes": 892300,
+      "sha256": "25c7b8f179e6f8cd9554fb3a7c52322881c4380b7e89f9988423a086b6557512"
+    },
+    {
+      "path": "original data/SA_partial component or branch open circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "8be872306be3330eb6dff13d673a0e657cb5e008506c2259d6c0b940388c37b2"
+    },
+    {
+      "path": "original data/SA_partial component or branch short circuit/SA_partial component or branch short circuit.csv",
+      "bytes": 4531567,
+      "sha256": "4c3a9420d0db36913ac08ca3ccbcdcf307d90572a9c016c5a5b22c72016a177b"
+    },
+    {
+      "path": "original data/SA_partial component or branch short circuit/SA_partial component or branch short circuit.pdf",
+      "bytes": 641235,
+      "sha256": "64e1ee0c1475ec578ac5e906e7bfb3bc516ed8dac1bd9a55f3bb91abb324c211"
+    },
+    {
+      "path": "original data/SA_partial component or branch short circuit/SA_partial component or branch short circuit.pkl",
+      "bytes": 6061698,
+      "sha256": "d517ada93d66355e3338e9feff6d20319cf3fe440267b31e13d86ce52f969ad7"
+    },
+    {
+      "path": "original data/SA_partial component or branch short circuit/SA_partial component or branch short circuit_AnomalyLabel.csv",
+      "bytes": 512482,
+      "sha256": "bb947fca256a7dfaeb78c6768e7b1722c8233f1c9199ea8217d729505f8bc96a"
+    },
+    {
+      "path": "original data/SA_partial component or branch short circuit/SA_partial component or branch short circuit_AnomalyLabel.pkl",
+      "bytes": 357511,
+      "sha256": "12b261cbb260db19fa31908a3835d69764bd019035cf1eda9e619a7dd2f14247"
+    },
+    {
+      "path": "original data/SA_partial component or branch short circuit/SA_partial component or branch short circuit_Work_Condition.csv",
+      "bytes": 715388,
+      "sha256": "d3552e0e5048df64c3c8eff150c1786814e3def6d3811766e61fd007957c50ef"
+    },
+    {
+      "path": "original data/SA_partial component or branch short circuit/SA_partial component or branch short circuit_Work_Condition.pdf",
+      "bytes": 88686,
+      "sha256": "b4df5ebc2927ade00b137b30bbc1f87a6802bdda386521d97f7814588412fb77"
+    },
+    {
+      "path": "original data/SA_partial component or branch short circuit/SA_partial component or branch short circuit_Work_Condition.pkl",
+      "bytes": 892300,
+      "sha256": "1d7ad72e2952a71f1f18afa390915f9d15743a284b96fb0a07c75efa03bbdca3"
+    },
+    {
+      "path": "original data/SA_partial component or branch short circuit/readme.txt",
+      "bytes": 65,
+      "sha256": "22cddbbfebe76e958f31a277aa1d77163200c647eb7e8695962820cfafbabd01"
+    },
+    {
+      "path": "original data/readme.md",
+      "bytes": 831,
+      "sha256": "9e4daf1fd355f9355f0fde073d3c6b222d1301d6f3f465a440453e33b8906dd8"
+    }
+  ]
+}
