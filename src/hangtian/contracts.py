@@ -79,7 +79,9 @@ POS = {"type": "integer", "minimum": 1}
 NONNEG = {"type": "number", "minimum": 0}
 MODEL_SETTINGS = obj({"base_url": TEXT, "api_key_env": IDENTIFIER, "model": TEXT,
                       "max_tokens": {"type": "integer", "minimum": 256, "maximum": 32768},
-                      "temperature": {"type": "number", "minimum": 0, "maximum": 2}})
+                      "temperature": {"type": "number", "minimum": 0, "maximum": 2},
+                      "thinking": enum("enabled", "disabled"),
+                      "reasoning_effort": enum("low", "high", "max")}, ("thinking", "reasoning_effort"))
 SCHEMAS["config"] = obj({
     "schema_version": {"const": "0.1"}, "max_rows": POS,
     "max_cases": {"type": "integer", "minimum": 1, "maximum": 1000},
@@ -93,6 +95,96 @@ SCHEMAS["config"] = obj({
         "context_channels": arr(TEXT, 1), "zero_channels": arr(TEXT), "zero_epsilon": NONNEG,
         "min_zero_rows": POS, "channels": {"type": "object", "additionalProperties": obj({
             "min_step": NONNEG, "min_spike": NONNEG, "neighbor_tolerance": NONNEG})}})
+})
+
+
+# Version 0.2 material pilot contracts. Kept separate from the legacy single-file factory.
+MATERIAL_QUERY = obj({
+    "record_id": IDENTIFIER,
+    "op": enum("stat", "first_sustained", "quality", "longest_zero_run"),
+    "region": IDENTIFIER,
+    "slice": enum("all", "last60s", "before_recovery30", "after_recovery30"),
+    "channel": TEXT,
+    "stat": enum("median", "min", "max", "mean", "count"),
+    "threshold": {"type": "number"},
+    "min_records": {"type": "integer", "minimum": 1, "maximum": 100},
+    "direction": enum("above", "below"),
+    "metric": enum("rows", "duplicate_extra_rows", "conflicting_timestamp_groups", "conflict_channel_count",
+                   "time_reversals", "gaps_gt_1s", "max_gap_s", "elapsed_span_s"),
+    "channels": arr(TEXT, 1, 40),
+}, ("channel", "stat", "threshold", "min_records", "direction", "metric", "channels"))
+MATERIAL_TASK = obj({
+    "task_id": IDENTIFIER, "slot_id": IDENTIFIER, "title": TEXT, "prompt": TEXT,
+    "measurement_ids": arr(IDENTIFIER, 1, 40), "interpretation_ids": arr(IDENTIFIER, 1, 12),
+    "required_record_ids": arr(IDENTIFIER, 1, 12),
+    "why_data_are_needed": TEXT, "distinctness": TEXT,
+    "interpretation_statements": arr(obj({"interpretation_id": IDENTIFIER, "statement": TEXT}), 1, 12),
+}, ("interpretation_statements",))
+PILOT_REVIEW = obj({"task_id": IDENTIFIER, "decision": enum("accept", "revise", "reject"),
+    "leakage": {"type": "boolean"}, "issues": arr(TEXT), "rationale": TEXT})
+MEASUREMENT_ANSWER = obj({"measurement_id": IDENTIFIER,
+    "value": {"type": ["number", "null"]}, "observation_id": IDENTIFIER})
+INTERPRETATION_ANSWER = obj({"interpretation_id": IDENTIFIER,
+    "verdict": enum("supported", "refuted", "insufficient"), "explanation": TEXT,
+    "observation_ids": arr(IDENTIFIER, 1, 40)})
+PILOT_ANSWER = obj({"measurements": arr(MEASUREMENT_ANSWER, 1, 40),
+    "interpretations": arr(INTERPRETATION_ANSWER, 1, 12), "limitations": arr(TEXT, 1, 12)})
+SCHEMAS.update({
+    "material_query": MATERIAL_QUERY,
+    "material_tasks": obj({"material_id": IDENTIFIER, "tasks": arr(MATERIAL_TASK, 3, 5)}),
+    "material_review": obj({"reviews": arr(PILOT_REVIEW, 3, 5)}),
+    "solver_step": {"oneOf": [
+        obj({"action": {"const": "query"}, "queries": arr(MATERIAL_QUERY, 1, 40)}),
+        obj({"action": {"const": "submit"}, "answer": PILOT_ANSWER})]},
+    "pilot_answer": PILOT_ANSWER,
+    "answer_review": obj({"task_id": IDENTIFIER, "decision": enum("pass", "fail"),
+        "criteria": arr(obj({"interpretation_id": IDENTIFIER, "pass": {"type": "boolean"},
+                             "reason": TEXT}), 1, 12), "issues": arr(TEXT)}),
+    "material_config": obj({
+        "schema_version": {"const": "0.2"}, "max_api_calls": {"type": "integer", "minimum": 1, "maximum": 1000},
+        "max_solver_steps": {"type": "integer", "minimum": 2, "maximum": 12},
+        "max_revisions": {"type": "integer", "minimum": 0, "maximum": 2},
+        "transport_retries": {"type": "integer", "minimum": 0, "maximum": 2},
+        "timeout_seconds": POS, "max_input_bytes": POS, "max_response_bytes": POS,
+        "review_mode": enum("api", "assistant"),
+        "models": obj({r: MODEL_SETTINGS for r in ("material_generator", "material_critic", "material_solver", "material_judge")})}, ("review_mode",)),
+    "material_batch": obj({"schema_version": {"const": "0.2"},
+        "cases": arr(obj({"case_id": IDENTIFIER, "recipe_path": TEXT}), 1, 1000)}),
+    "draft_index": obj({"schema_version": {"const": "0.2"},
+        "cases": arr(obj({"case_id": IDENTIFIER, "proposal_path": TEXT, "authorship": TEXT}), 1, 1000)}),
+})
+
+
+# Autonomous investigations keep reference computations private. A solver chooses
+# its own records, channels and row windows; an authentic citation is not a grade.
+AUTONOMOUS_QUERY = obj({
+    "record_id": IDENTIFIER, "op": enum("read", "profile", "stat", "quality", "first_sustained", "longest_zero_run"),
+    "start_row": {"type": "integer", "minimum": 0}, "stop_row": POS,
+    "channels": arr(TEXT, 1, 40), "channel": TEXT,
+    "stat": enum("median", "mean", "min", "max", "count"),
+    "bins": {"type": "integer", "minimum": 1, "maximum": 64},
+    "threshold": {"type": "number"}, "min_records": {"type": "integer", "minimum": 1, "maximum": 100},
+    "direction": enum("above", "below"),
+    "metric": MATERIAL_QUERY["properties"]["metric"],
+}, ("channels", "channel", "stat", "bins", "threshold", "min_records", "direction", "metric"))
+AUTONOMOUS_TASK = obj({
+    "task_id": IDENTIFIER, "slot_id": IDENTIFIER, "title": TEXT, "prompt": TEXT,
+    "private_rubric": arr(obj({"criterion": TEXT, "reference_fact_ids": arr(IDENTIFIER, 1, 40),
+                              "acceptable_alternatives": TEXT}), 2, 6),
+    "private_decisions_left_to_agent": arr(TEXT, 2, 6), "private_distinctness": TEXT,
+})
+AUTONOMOUS_ANSWER = obj({
+    "findings": arr(obj({"claim": TEXT, "observation_ids": arr(IDENTIFIER, 1, 100)}), 1, 30),
+    "conclusion": TEXT, "limitations": arr(TEXT, 0, 20),
+})
+SCHEMAS.update({
+    "autonomous_tasks": obj({"material_id": IDENTIFIER, "tasks": arr(AUTONOMOUS_TASK, 1, 20)}),
+    "autonomous_query": AUTONOMOUS_QUERY,
+    "autonomous_answer": AUTONOMOUS_ANSWER,
+    "autonomous_step": {"oneOf": [
+        obj({"action": {"const": "query"}, "queries": arr(AUTONOMOUS_QUERY, 1, 20)}),
+        obj({"action": {"const": "submit"}, "answer": AUTONOMOUS_ANSWER}),
+    ]},
 })
 
 

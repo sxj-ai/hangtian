@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+    },
+    "op": {
+      "type": "string",
+      "enum": [
+        "read",
+        "profile",
+        "stat",
+        "quality",
+        "first_sustained",
+        "longest_zero_run"
+      ]
+    },
+    "start_row": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "stop_row": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6000
+      },
+      "minItems": 1,
+      "maxItems": 40
+    },
+    "channel": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 6000
+    },
+    "stat": {
+      "type": "string",
+      "enum": [
+        "median",
+        "mean",
+        "min",
+        "max",
+        "count"
+      ]
+    },
+    "bins": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 64
+    },
+    "threshold": {
+      "type": "number"
+    },
+    "min_records": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "above",
+        "below"
+      ]
+    },
+    "metric": {
+      "type": "string",
+      "enum": [
+        "rows",
+        "duplicate_extra_rows",
+        "conflicting_timestamp_groups",
+        "conflict_channel_count",
+        "time_reversals",
+        "gaps_gt_1s",
+        "max_gap_s",
+        "elapsed_span_s"
+      ]
+    }
+  },
+  "required": [
+    "record_id",
+    "op",
+    "start_row",
+    "stop_row"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "provider": "hangtian-deepseek",
+  "base_url": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "thinking": "disabled",
+  "pi_package_version": "0.87.1",
+  "max_api_calls_per_task": 16,
+  "max_tool_calls_per_task": 64,
+  "max_output_tokens": 8192,
+  "max_input_bytes": 900000,
+  "max_run_seconds": 1200,
+  "temperature": 0.2
+}

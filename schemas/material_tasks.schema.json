@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "material_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          },
+          "slot_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "measurement_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+            },
+            "minItems": 1,
+            "maxItems": 40
+          },
+          "interpretation_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+            },
+            "minItems": 1,
+            "maxItems": 12
+          },
+          "required_record_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+            },
+            "minItems": 1,
+            "maxItems": 12
+          },
+          "why_data_are_needed": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "distinctness": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "interpretation_statements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "interpretation_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+                },
+                "statement": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                }
+              },
+              "required": [
+                "interpretation_id",
+                "statement"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 12
+          }
+        },
+        "required": [
+          "task_id",
+          "slot_id",
+          "title",
+          "prompt",
+          "measurement_ids",
+          "interpretation_ids",
+          "required_record_ids",
+          "why_data_are_needed",
+          "distinctness"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 3,
+      "maxItems": 5
+    }
+  },
+  "required": [
+    "material_id",
+    "tasks"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "accept",
+              "revise",
+              "reject"
+            ]
+          },
+          "leakage": {
+            "type": "boolean"
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000
+            },
+            "minItems": 0,
+            "maxItems": 200
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          }
+        },
+        "required": [
+          "task_id",
+          "decision",
+          "leakage",
+          "issues",
+          "rationale"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 3,
+      "maxItems": 5
+    }
+  },
+  "required": [
+    "reviews"
+  ],
+  "additionalProperties": false
+}

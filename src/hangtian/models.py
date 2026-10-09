@@ -26,13 +26,15 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
 
 class DeepSeekModel:
     mode = "remote"
+    disable_thinking = True
 
     def __init__(self, config: dict, project_root: Path, out: Path,
                  allow_remote: bool = False, allow_data_egress: bool = False):
         if not (allow_remote and allow_data_egress):
             raise DataError("Remote calls require both --allow-remote and --allow-data-egress")
         self.config, self.root, self.out = config, project_root, out
-        self.calls = 0
+        existing = sorted((out / "private" / "calls").glob("*.json"))
+        self.calls = max((int(p.stem) for p in existing), default=0)
         self.metadata: list[dict] = []
 
     def call(self, role: str, payload: dict, kind: str) -> dict:
@@ -51,7 +53,12 @@ class DeepSeekModel:
         body = {"model": settings["model"], "messages": [{"role": "system", "content": system},
                 {"role": "user", "content": user}], "response_format": {"type": "json_object"},
                 "max_tokens": settings["max_tokens"], "temperature": settings["temperature"],
-                "thinking": {"type": "disabled"}, "stream": False}
+                "stream": False}
+        if self.disable_thinking:
+            body["thinking"] = {"type": settings.get("thinking", "disabled")}
+            if body["thinking"]["type"] == "enabled":
+                body.pop("temperature", None)
+                body["reasoning_effort"] = settings.get("reasoning_effort", "high")
         opener = urllib.request.build_opener(NoRedirect())
         for attempt in range(self.config["transport_retries"] + 1):
             if self.calls >= self.config["max_api_calls"]:
@@ -60,10 +67,10 @@ class DeepSeekModel:
             record = {"call_index": self.calls, "role": role, "timestamp": datetime.now(timezone.utc).isoformat(),
                       "requested_model": settings["model"], "endpoint": settings["base_url"],
                       "prompt_sha256": digest(system), "input_sha256": digest(payload),
-                      "parameters": {"temperature": settings["temperature"], "max_tokens": settings["max_tokens"]},
+                      "parameters": {k: body[k] for k in ("temperature", "max_tokens", "thinking", "reasoning_effort") if k in body},
                       "attempt": attempt, "status": "started"}
             call_path = self.out / "private" / "calls" / f"{self.calls:05d}.json"
-            write_json(call_path, {"metadata": record, "input": payload})
+            write_json(call_path, {"metadata": record, "system_prompt": system, "input": payload})
             start = time.monotonic()
             try:
                 req = urllib.request.Request(settings["base_url"].rstrip("/") + "/chat/completions",
@@ -80,7 +87,7 @@ class DeepSeekModel:
                     "system_fingerprint": envelope.get("system_fingerprint"), "usage": envelope.get("usage", {}),
                     "finish_reason": choice.get("finish_reason"), "latency_seconds": time.monotonic() - start})
                 # Do not retain provider reasoning_content; only contract output is required.
-                write_json(call_path, {"metadata": record, "input": payload, "output_text": content})
+                write_json(call_path, {"metadata": record, "system_prompt": system, "input": payload, "output_text": content})
                 if choice.get("finish_reason") != "stop" or not content:
                     raise DataError("Incomplete or empty model output")
                 result = json.loads(content, parse_constant=lambda _: (_ for _ in ()).throw(DataError("Non-finite JSON")))
@@ -88,7 +95,7 @@ class DeepSeekModel:
                     raise DataError("Expected one JSON object")
                 record["status"] = "completed"
                 self.metadata.append(record)
-                write_json(call_path, {"metadata": record, "input": payload, "output": result})
+                write_json(call_path, {"metadata": record, "system_prompt": system, "input": payload, "output": result})
                 return result
             except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as error:
                 code = getattr(error, "code", None)
@@ -103,6 +110,11 @@ class DeepSeekModel:
             except (KeyError, IndexError, json.JSONDecodeError) as error:
                 raise DataError(f"Malformed model response ({type(error).__name__})") from None
         raise DataError("No model response")
+
+
+class CompatibleModel(DeepSeekModel):
+    """Configured Chat Completions endpoint; no provider identity is assumed."""
+    disable_thinking = False
 
 
 class MockModel:

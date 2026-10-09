@@ -3,35 +3,27 @@
   "type": "object",
   "properties": {
     "schema_version": {
-      "const": "0.1"
+      "const": "0.2"
     },
-    "max_rows": {
-      "type": "integer",
-      "minimum": 1
-    },
-    "max_cases": {
+    "max_api_calls": {
       "type": "integer",
       "minimum": 1,
       "maximum": 1000
     },
+    "max_solver_steps": {
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 12
+    },
     "max_revisions": {
       "type": "integer",
       "minimum": 0,
-      "maximum": 3
-    },
-    "task_language": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 6000
-    },
-    "max_api_calls": {
-      "type": "integer",
-      "minimum": 1
+      "maximum": 2
     },
     "transport_retries": {
       "type": "integer",
       "minimum": 0,
-      "maximum": 3
+      "maximum": 2
     },
     "timeout_seconds": {
       "type": "integer",
@@ -45,10 +37,17 @@
       "type": "integer",
       "minimum": 1
     },
+    "review_mode": {
+      "type": "string",
+      "enum": [
+        "api",
+        "assistant"
+      ]
+    },
     "models": {
       "type": "object",
       "properties": {
-        "case_curator": {
+        "material_generator": {
           "type": "object",
           "properties": {
             "base_url": {
@@ -100,7 +99,7 @@
           ],
           "additionalProperties": false
         },
-        "task_generator": {
+        "material_critic": {
           "type": "object",
           "properties": {
             "base_url": {
@@ -152,7 +151,59 @@
           ],
           "additionalProperties": false
         },
-        "task_critic": {
+        "material_solver": {
+          "type": "object",
+          "properties": {
+            "base_url": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000
+            },
+            "api_key_env": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+            },
+            "model": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000
+            },
+            "max_tokens": {
+              "type": "integer",
+              "minimum": 256,
+              "maximum": 32768
+            },
+            "temperature": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "thinking": {
+              "type": "string",
+              "enum": [
+                "enabled",
+                "disabled"
+              ]
+            },
+            "reasoning_effort": {
+              "type": "string",
+              "enum": [
+                "low",
+                "high",
+                "max"
+              ]
+            }
+          },
+          "required": [
+            "base_url",
+            "api_key_env",
+            "model",
+            "max_tokens",
+            "temperature"
+          ],
+          "additionalProperties": false
+        },
+        "material_judge": {
           "type": "object",
           "properties": {
             "base_url": {
@@ -206,123 +257,24 @@
         }
       },
       "required": [
-        "case_curator",
-        "task_generator",
-        "task_critic"
-      ],
-      "additionalProperties": false
-    },
-    "mining": {
-      "type": "object",
-      "properties": {
-        "window_rows": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "noise_multiplier": {
-          "type": "number",
-          "minimum": 0
-        },
-        "group_gap_rows": {
-          "type": "integer",
-          "minimum": 0
-        },
-        "max_group_span_rows": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "context_rows": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "max_channels": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "context_channels": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 6000
-          },
-          "minItems": 1,
-          "maxItems": 200
-        },
-        "zero_channels": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1,
-            "maxLength": 6000
-          },
-          "minItems": 0,
-          "maxItems": 200
-        },
-        "zero_epsilon": {
-          "type": "number",
-          "minimum": 0
-        },
-        "min_zero_rows": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "channels": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object",
-            "properties": {
-              "min_step": {
-                "type": "number",
-                "minimum": 0
-              },
-              "min_spike": {
-                "type": "number",
-                "minimum": 0
-              },
-              "neighbor_tolerance": {
-                "type": "number",
-                "minimum": 0
-              }
-            },
-            "required": [
-              "min_step",
-              "min_spike",
-              "neighbor_tolerance"
-            ],
-            "additionalProperties": false
-          }
-        }
-      },
-      "required": [
-        "window_rows",
-        "noise_multiplier",
-        "group_gap_rows",
-        "max_group_span_rows",
-        "context_rows",
-        "max_channels",
-        "context_channels",
-        "zero_channels",
-        "zero_epsilon",
-        "min_zero_rows",
-        "channels"
+        "material_generator",
+        "material_critic",
+        "material_solver",
+        "material_judge"
       ],
       "additionalProperties": false
     }
   },
   "required": [
     "schema_version",
-    "max_rows",
-    "max_cases",
-    "max_revisions",
-    "task_language",
     "max_api_calls",
+    "max_solver_steps",
+    "max_revisions",
     "transport_retries",
     "timeout_seconds",
     "max_input_bytes",
     "max_response_bytes",
-    "models",
-    "mining"
+    "models"
   ],
   "additionalProperties": false
 }

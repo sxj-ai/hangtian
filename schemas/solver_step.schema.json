@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "action": {
+          "const": "query"
+        },
+        "queries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "record_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+              },
+              "op": {
+                "type": "string",
+                "enum": [
+                  "stat",
+                  "first_sustained",
+                  "quality",
+                  "longest_zero_run"
+                ]
+              },
+              "region": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+              },
+              "slice": {
+                "type": "string",
+                "enum": [
+                  "all",
+                  "last60s",
+                  "before_recovery30",
+                  "after_recovery30"
+                ]
+              },
+              "channel": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 6000
+              },
+              "stat": {
+                "type": "string",
+                "enum": [
+                  "median",
+                  "min",
+                  "max",
+                  "mean",
+                  "count"
+                ]
+              },
+              "threshold": {
+                "type": "number"
+              },
+              "min_records": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100
+              },
+              "direction": {
+                "type": "string",
+                "enum": [
+                  "above",
+                  "below"
+                ]
+              },
+              "metric": {
+                "type": "string",
+                "enum": [
+                  "rows",
+                  "duplicate_extra_rows",
+                  "conflicting_timestamp_groups",
+                  "conflict_channel_count",
+                  "time_reversals",
+                  "gaps_gt_1s",
+                  "max_gap_s",
+                  "elapsed_span_s"
+                ]
+              },
+              "channels": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                },
+                "minItems": 1,
+                "maxItems": 40
+              }
+            },
+            "required": [
+              "record_id",
+              "op",
+              "region",
+              "slice"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "maxItems": 40
+        }
+      },
+      "required": [
+        "action",
+        "queries"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "action": {
+          "const": "submit"
+        },
+        "answer": {
+          "type": "object",
+          "properties": {
+            "measurements": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "measurement_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+                  },
+                  "value": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "observation_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+                  }
+                },
+                "required": [
+                  "measurement_id",
+                  "value",
+                  "observation_id"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "maxItems": 40
+            },
+            "interpretations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "interpretation_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+                  },
+                  "verdict": {
+                    "type": "string",
+                    "enum": [
+                      "supported",
+                      "refuted",
+                      "insufficient"
+                    ]
+                  },
+                  "explanation": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 6000
+                  },
+                  "observation_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+                    },
+                    "minItems": 1,
+                    "maxItems": 40
+                  }
+                },
+                "required": [
+                  "interpretation_id",
+                  "verdict",
+                  "explanation",
+                  "observation_ids"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 1,
+              "maxItems": 12
+            },
+            "limitations": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 6000
+              },
+              "minItems": 1,
+              "maxItems": 12
+            }
+          },
+          "required": [
+            "measurements",
+            "interpretations",
+            "limitations"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "action",
+        "answer"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

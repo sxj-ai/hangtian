@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "material_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          },
+          "slot_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          },
+          "private_rubric": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "criterion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                },
+                "reference_fact_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+                  },
+                  "minItems": 1,
+                  "maxItems": 40
+                },
+                "acceptable_alternatives": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 6000
+                }
+              },
+              "required": [
+                "criterion",
+                "reference_fact_ids",
+                "acceptable_alternatives"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 2,
+            "maxItems": 6
+          },
+          "private_decisions_left_to_agent": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6000
+            },
+            "minItems": 2,
+            "maxItems": 6
+          },
+          "private_distinctness": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 6000
+          }
+        },
+        "required": [
+          "task_id",
+          "slot_id",
+          "title",
+          "prompt",
+          "private_rubric",
+          "private_decisions_left_to_agent",
+          "private_distinctness"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 20
+    }
+  },
+  "required": [
+    "material_id",
+    "tasks"
+  ],
+  "additionalProperties": false
+}

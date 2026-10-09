@@ -7,7 +7,7 @@ from pathlib import Path
 from .contracts import export_schemas, validate
 from .data import DataError
 from .factory import run
-from .models import DeepSeekModel, MockModel
+from .models import CompatibleModel, DeepSeekModel, MockModel
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -23,12 +23,44 @@ def main(argv: list[str] | None = None) -> int:
     factory.add_argument("--backend", choices=("mock", "deepseek"), default="mock")
     factory.add_argument("--allow-remote", action="store_true")
     factory.add_argument("--allow-data-egress", action="store_true")
+    material = commands.add_parser("material-batch", help="Build audited materials, generate tasks and validate actual solver rollouts")
+    material.add_argument("--manifest", type=Path, required=True)
+    material.add_argument("--config", type=Path, required=True)
+    material.add_argument("--project-root", type=Path, default=Path.cwd())
+    material.add_argument("--out", type=Path, required=True)
+    material.add_argument("--stage", choices=("materials", "audit", "generate", "all"), default="materials")
+    material.add_argument("--draft-index", type=Path, help="Explicit authored drafts for the API-free audit stage")
+    material.add_argument("--backend", choices=("compatible", "deepseek"), default="compatible")
+    material.add_argument("--allow-remote", action="store_true")
+    material.add_argument("--allow-data-egress", action="store_true")
     args = parser.parse_args(argv)
     try:
         if args.command == "schemas":
             export_schemas(args.out)
             return 0
         config = json.loads(args.config.read_text(encoding="utf-8"))
+        if args.command == "material-batch":
+            from .material_pipeline import run_batch
+            validate("material_config", config)
+            if args.stage == "audit":
+                from .material_pipeline import audit_drafts
+                if args.draft_index is None:
+                    raise DataError("API-free audit requires --draft-index")
+                result = audit_drafts(args.manifest, args.draft_index, config, args.out, args.project_root)
+                print(json.dumps(result, ensure_ascii=False, indent=2))
+                return 2 if result["errors"] else 0
+            if args.stage == "materials":
+                class NoRemote:
+                    mode = "remote"
+                    def call(self, *args, **kwargs):
+                        raise DataError("Material-only stage cannot call a model")
+                model = NoRemote()
+            else:
+                backend = DeepSeekModel if args.backend == "deepseek" else CompatibleModel
+                model = backend(config, args.project_root, args.out, args.allow_remote, args.allow_data_egress)
+            result = run_batch(args.manifest, config, model, args.out, args.project_root, args.stage)
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            return 2 if result["errors"] else 0
         manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
         validate("manifest", manifest)
         if not 1 <= config["max_cases"] <= 1000 or not 0 <= config["max_revisions"] <= 3:
