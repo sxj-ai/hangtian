@@ -14,11 +14,16 @@
 *.safetensors
 *.csv
 !examples/synthetic/*.csv
-# Owner-authorized dataset snapshot; large files are tracked with Git LFS.
-!XJTU-SPS/**/*.csv
-!XJTU-SPS/**/*.pkl
+# The XJTU-SPS dataset lives on the HPC (~/llm_datasets/XJTU-SPS), never in this repo.
+XJTU-SPS/
 data/
 runs/
+handoff/
+.research_loop/
+*.zip
+*.private.json
+*.private.md
+*.private.jsonl
 artifacts/
 private/
 *.local.json

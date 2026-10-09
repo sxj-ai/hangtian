@@ -74,6 +74,8 @@ python -m hangtian.cli run \
 
 ## 数据放在哪里？
 
-核心流程支持把真实数据保留在 HPC 或本地，通过显式 manifest 引用。另按仓库所有者要求，本仓库在 [`XJTU-SPS/`](XJTU-SPS/) 保存一份完整数据快照，大文件使用 Git LFS；共 364 个原始文件路径，内容总大小为 5,420,627,249 字节。下载方式见 [DATASET.md](DATASET.md)，逐文件来源清单见 [DATASET_MANIFEST.json](DATASET_MANIFEST.json)。数据快照不代表已完成案例挖掘、真实流程接入或独立训练／测试划分。私有答案、运行日志、密钥和模型权重不属于本次数据快照。
+核心流程支持把真实数据保留在 HPC 或本地，通过显式 manifest 引用。XJTU-SPS 数据集**不再存放在本仓库**：它保存在 HPC 的 `~/llm_datasets/XJTU-SPS`，原始发布方说明见 [DATASET.md](DATASET.md)，逐文件来源清单（路径、字节数、SHA-256）见 [DATASET_MANIFEST.json](DATASET_MANIFEST.json)，可用 `scripts/verify_dataset.py` 校验。数据不代表已完成案例挖掘、真实流程接入或独立训练／测试划分。私有答案、运行日志、密钥和模型权重同样不在本仓库中。
+
+> 早期提交（`d9994ba` 起）曾以 Git LFS 保存过该数据快照，当前版本已移除；从旧提交检出时请设置 `GIT_LFS_SKIP_SMUDGE=1`，避免下载约 5 GB 数据。
 
 本仓库的方法和 taxonomy 是研究设计，不预先宣称论文创新、实验提升或足够的数据规模。完整相关工作对照和真实实验仍待开展。
