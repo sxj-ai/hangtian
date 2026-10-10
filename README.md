@@ -2,9 +2,11 @@
 
 从航天遥测中挖掘可审计的 **Case**，制造有实质差异、可验证的 **Agent Task**。先建设数据与任务制造流程，后续再接入真实 Agent 轨迹、SFT 和独立 Benchmark。
 
-> **v0.1：研究原型，不是已经验证的航天诊断系统。** 本版包含实际代码、三个英文角色提示词、JSON 契约、合成演示及测试。尚未接入用户 HPC 的真实 CSV、调用真实 DeepSeek API 或运行 Pi Core 教师。Mock 通过不等于模型通过，Critic 通过不等于任务已经由独立 Agent 验证。
+> **当前进展（2026-10-10）：** 已接入 HPC 实验数据，保留100道开发任务及原15题的 Qwen/DeepSeek 工具交互评测。实际答案仍有时间参照、证据覆盖和解释错误，不能把任务数或提交数当成高质量样本数。当前讨论 pipeline 质量，案例整理流程由当前助手直接执行；本次同步不启动案例生产或模型调用。详见 [当前状态](CURRENT_STATUS.md)、[评测记录](docs/pi_evaluation.md)和[案例整理流程](docs/case_curation/DIRECT_CASE_WORKFLOW.md)。
 
-## 核心流程
+以下流程、角色和能力表保留初版设计背景，后续已实现内容和当前限制以以上文档为准。项目仍是研究原型，不是已经验证的航天诊断系统。
+
+## 初版核心流程
 
 ```text
 Local telemetry + explicit lineage manifest
@@ -49,7 +51,7 @@ python -m hangtian.cli run \
 
 初版三个角色均配置 **DeepSeek V4.1 Flash**。官方当前 API 别名是 **`deepseek-flash`**，不是 `deepseek-v4.1-flash`。各角色可独立替换配置；非兼容 API 需替换 `RoleModel` 适配器。别名并非不可变权重版本，须记录返回模型、时间及请求元数据。[官方依据与核对范围](docs/sources.md)。
 
-## 已实现与边界
+## 初版实现与边界（历史记录）
 
 | 模块 | 已实现 | 仍需完成 |
 |---|---|---|

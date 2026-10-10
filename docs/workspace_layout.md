@@ -1,7 +1,7 @@
 # Workspace layout (HPC)
 
 This repository is developed on the HPC in `~/hangtian_material_pipeline` and synchronized to
-GitHub (`sxj-ai/hangtian`, private) with `git push`. Edit on the HPC; pull elsewhere.
+GitHub (`sxj-ai/hangtian`) with `git push`. Edit on the HPC; pull elsewhere.
 
 ## Do not move or rename (absolute paths are hard-coded)
 
@@ -22,7 +22,7 @@ GitHub (`sxj-ai/hangtian`, private) with `git push`. Edit on the HPC; pull elsew
 `runs/` is a provenance chain; later runs record paths of earlier ones, so do not move them.
 
 - Task chain: `expansion_flash_001..007` -> `expansion_flash_final_001` -> `autonomy_revision_001..003`
-  -> `autonomous_tasks_final_001` (current reviewed 15 tasks, see `CURRENT_STATUS.md`);
+  -> `autonomous_tasks_final_001` (historical 15-task batch; current scope in `CURRENT_STATUS.md`);
   `autonomous_tasks_100_001` -> `autonomous_tasks_100_final_001`.
 - Pi / agent evaluation: `pi_qwen35_*`, `pi_deepseek_flash_budget80_001`, `pilot_001`, `pilot_offline_001`.
 - Audits: `case_capacity_audit_002`, `case_curation_handoff_checks_001`.
